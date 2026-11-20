@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>期望值是正的，為什麼我還是輸光了？EV 與資金控管解析 | PlayLogTW</title>
+  <meta name="description" content="期望值（EV）只管長期平均，帳戶走的是單一路徑。從連輸機率、虧損回本不對稱、凱利公式到互動式 EV 與破產風險計算機，一次看懂資金控管。">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #0f766e;
+      --accent-soft: #f0fdfa;
+      --warn-bg: #fffbeb;
+      --warn-border: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 32px auto 64px;
+      padding: 0 20px;
+    }
+
+    article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .breadcrumb {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+      line-height: 1.3;
+      margin: 0 0 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .tldr {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0 28px;
+    }
+
+    .tldr p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin: 36px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.35;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin: 24px 0 10px;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul, ol {
+      margin: 0 0 18px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .formula-box {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 1rem;
+      overflow-x: auto;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .calc-section {
+      margin: 28px 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .disclaimer {
+      margin-top: 32px;
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 0.92rem;
+    }
+
+    .disclaimer h2 {
+      margin-top: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+      font-size: 1.1rem;
+    }
+
+    .site-footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.875rem;
+      padding: 24px 20px 40px;
+    }
+
+    @media (max-width: 640px) {
+      article {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="/">PlayLogTW</a>
+      <nav class="nav-links" aria-label="主導覽">
+        <a href="/">首頁</a>
+        <a href="/mechanics/">遊戲機制</a>
+        <a href="/guides/">實戰攻略</a>
+        <a href="/risk-management/">風險與資金控管</a>
+        <a href="/about/">關於我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <div class="breadcrumb">
+        <a href="/">首頁</a> / <a href="/risk-management/">風險與資金控管</a> / 期望值與資金控管
+      </div>
+
+      <h1>期望值是正的，為什麼我還是輸光了？</h1>
+
+      <div class="tldr">
+        <p><strong>核心結論：</strong>期望值（EV）只管「平均」，而你的帳戶走的是「一條路」。EV 是正的，代表重複夠多次之後平均會賺；但如果前面幾次連輸就把本金耗光，後面的平均永遠輪不到你。比起猜下一把會不會中，更值得先搞懂兩件事：這個賭局值不值得玩（期望值），以及你輸得起幾次（資金控管）。</p>
+      </div>
+
+      <p>本文用投資、撲克和賭局當例子[cite: 5]。它們的共通點是：結果有機率，而且你會一直重複下注[cite: 5]。</p>
+
+      <h2>期望值（EV）是什麼</h2>
+      <p>EV 是把每一種結果乘上它的機率，再全部加起來，得到的平均損益[cite: 5]。贏記正數，輸記負數[cite: 5]。</p>
+
+      <div class="formula-box">EV = p × W − q × L</div>
+
+      <p><code>p</code> 是勝率，<code>q</code> 是敗率（1 − p），<code>W</code> 是贏時賺的金額，<code>L</code> 是輸時賠的金額[cite: 5]。</p>
+
+      <p>舉個例子：擲硬幣，正面賺 120 元，反面賠 100 元[cite: 5]。EV = 0.5 × 120 − 0.5 × 100 = +10 元[cite: 5]。但你每一次實際拿到的只有 +120 或 −100，從來沒有哪一次剛好是 +10[cite: 5]。+10 是玩很多次之後的平均[cite: 5]。</p>
+
+      <h3>三個最常見的誤會</h3>
+      <ul>
+        <li><strong>EV 是正的，不代表這次會賺：</strong>這個遊戲單次仍有 50% 的機率賠 100 元[cite: 5]。</li>
+        <li><strong>EV 不是最可能發生的結果：</strong>六面骰的 EV 是 3.5 點，但你不可能擲出 3.5 點[cite: 5]。</li>
+        <li><strong>勝率高，EV 不一定高：</strong>勝率 70%，每次賺 5,000、賠 20,000：EV = 0.7 × 5,000 − 0.3 × 20,000 = −2,500[cite: 5]。勝率只有 30%，賺 30,000、賠 5,000：EV = 0.3 × 30,000 − 0.7 × 5,000 = +5,500[cite: 5]。勝率和賺賠大小要一起看[cite: 5]。</li>
+      </ul>
+
+      <p>還有一個前提要先講清楚：莊家有固定優勢的遊戲，EV 對玩家本來就是負的[cite: 5]。這種情況資金控管只能讓你輸得慢一點，不會讓它變成賺錢[cite: 5]。</p>
+
+      <h2>為什麼 EV 是正的，還是會輸光</h2>
+      <p>EV 只保證平均，不保證你走的那條路[cite: 5]。有五個原因會讓正 EV 的策略把你送出場[cite: 5]。</p>
+
+      <h3>1. 連輸比你想的更常發生</h3>
+      <p>勝率 70% 的策略，跑 100 筆，至少出現一次連輸 3 次的機率約 86%，連輸 5 次約 15%[cite: 5]。跑 300 筆，連輸 5 次的機率升到約 40%（以每筆獨立、敗率 30% 計算）[cite: 5]。</p>
+      <p>如果每次下注的比例太大，這些連輸就足以讓你出局[cite: 5]。</p>
+
+      <h3>2. 虧損和獲利不對稱</h3>
+      <p>資金虧 10%，要賺 11.1% 才回本；虧 50%，要賺 100%[cite: 5]。</p>
+      <p>再看一枚正 EV 的硬幣：正面賺 50%，反面賠 40%，每次 EV 是 +5%[cite: 5]。但一正一反，100 元會變成 90 元（100 × 1.5 × 0.6）[cite: 5]。資金是用乘的累積，不是用加的[cite: 5]。反覆玩下去，典型的人會越玩越少，只有少數運氣特別好的人，把「平均」拉了上去[cite: 5]。</p>
+
+      <h3>3. 同一個策略，下注比例決定生死</h3>
+      <p>拿一個正 EV 的策略來模擬：勝率 45%，賺賠比 1.5（贏賺 1.5 倍、輸賠 1 倍），每承擔 1 元風險平均賺 0.125 元[cite: 5]。這組的凱利比例約 8.3%[cite: 5]。跑 300 筆、模擬 3,000 次，「破產」定義為資金自高點回撤 50%[cite: 5]：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>單筆風險（占目前資金）</th>
+              <th>曾回撤 50% 的機率</th>
+              <th>終值中位數（起點 = 1）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2%</td>
+              <td>約 1%</td>
+              <td>1.93</td>
+            </tr>
+            <tr>
+              <td>4%</td>
+              <td>約 40%</td>
+              <td>3.10</td>
+            </tr>
+            <tr>
+              <td>5%</td>
+              <td>約 65%</td>
+              <td>3.67</td>
+            </tr>
+            <tr>
+              <td>8.3%（凱利）</td>
+              <td>約 99%</td>
+              <td>4.68</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>風險放越大，中位數越高，但幾乎一定會先經歷腰斬[cite: 5]。同一個策略，只改下注比例，你撐不撐得住就完全不同（這是模擬結果，假設每筆獨立、勝率與賺賠比固定）[cite: 5]。</p>
+
+      <h3>4. 你以為的 EV，可能其實是負的</h3>
+      <p>勝率和賺賠比都是你自己估的[cite: 5]。高估勝率，或忘了算手續費、滑價、稅、抽水，EV 就會縮水[cite: 5]。</p>
+      <p>舉例：賺賠比 1:1、勝率 52%，EV 是每筆 +0.04 倍風險單位[cite: 5]。如果每筆成本合計 0.05，EV 就變成 −0.01[cite: 5]。公式算得再準，輸入的數字是錯的，結果也是錯的[cite: 5]。</p>
+
+      <h3>5. 還有一個不是數學的原因</h3>
+      <p>前面四個是數學問題，這個是人的問題：連輸之後加倍追、連贏之後放大下注、到了停損線卻不肯走[cite: 5]。每做一次，你下的就不再是原本算過 EV 的那個賭局[cite: 5]。</p>
+
+      <h2>為什麼「猜下一把」沒有用</h2>
+      <p>因為你想猜的事，下一次的結果多半跟上一次無關，而且你手上的資訊永遠不夠[cite: 5]。</p>
+      <ul>
+        <li><strong>獨立事件不記得過去：</strong>輪盤連開 5 次黑，下一次開紅的機率沒有變高，這就是賭徒謬誤[cite: 5]。股價連跌幾天，也不代表「該反彈了」，沒有人欠你一次上漲[cite: 5]。</li>
+        <li><strong>高機率不等於這次會中：</strong>成功率 90% 的事，仍有 10% 會失敗[cite: 5]。</li>
+        <li><strong>猜中一次，不代表你有預測能力：</strong>成功率只有 20% 的決定，碰巧中了，你會以為自己有天分，然後重複下更多[cite: 5]。反過來，猜錯一次也不代表策略有問題[cite: 5]。</li>
+        <li><strong>資訊永遠不完整：</strong>突發消息、大資金調度、黑天鵝，你都沒辦法提前知道[cite: 5]。</li>
+      </ul>
+      <p>與其花力氣預測，不如承認資訊有限，把力氣放在你能控制的兩件事：每個決定的 EV，和你下的金額[cite: 5]。</p>
+
+      <h2>資金控管的四個工具</h2>
+      <p>EV 只能回答「這件事長期划不划算」[cite: 5]。撐不撐得到長期，靠下面四件事[cite: 5]。它們都在管同一件事：連輸的時候，你還剩多少子彈[cite: 5]。</p>
+
+      <h3>1. 單筆風險上限：先決定最多賠多少</h3>
+      <p>每次出手，最多只賠掉總資金的 1% 到 2%[cite: 5]。不少台股交易人是這樣訂的，例如 CT 財經知識庫的建議[cite: 5]。</p>
+      <p>本金 100 萬，1% 就是一次最多賠 1 萬，連輸十次也還剩九成左右[cite: 5]。上限要在出手之前定好，不是賠了才開始想[cite: 5]。</p>
+
+      <h3>2. 固定注碼或百分比注碼：挑一種，別亂改</h3>
+      <p>固定注碼是每次下一樣的金額[cite: 5]。百分比注碼是每次下「當時資金」的固定比例，賺了自然變大，賠了自然變小[cite: 5]。</p>
+      <p>兩種都可以，難的是一致[cite: 5]。賭本和生活費要分開放[cite: 5]。最該避開的是賠了就加倍想追回來，那等於假設你的錢拿不完[cite: 5]。</p>
+
+      <h3>3. 凱利公式與半凱利：算出「該下幾成」</h3>
+      <p>凱利公式在知道勝率和賠率的前提下，算出每次該下的比例[cite: 5]：</p>
+
+      <div class="formula-box">f = (b × p − q) ÷ b</div>
+
+      <p><code>p</code> 是勝率，<code>q</code> 是敗率（1 − p），<code>b</code> 是贏的時候每 1 元本金淨賺幾元[cite: 5]。</p>
+      <p>例子：勝率 40%，贏的時候淨賺 3 倍[cite: 5]。(3 × 0.4 − 0.6) ÷ 3 = 0.2，也就是每次下總資金的 20%[cite: 5]。算出來是負數，代表期望值本來就是負的，答案是不要玩[cite: 5]。</p>
+      <p>這個公式的前提是勝率和賠率估得準[cite: 5]。估高了，算出來的比例就偏大，所以有人只用一半（半凱利）[cite: 5]。前面的模擬表也看得到：下到凱利比例，回撤 50% 的機率已經接近 99%[cite: 5]。</p>
+
+      <h3>4. 帳戶熔斷機制：虧到某個程度就停手</h3>
+      <p>前面三個管「這一把」，熔斷管「整個帳戶」[cite: 5]。常見的設法有三種[cite: 5]：</p>
+      <ul>
+        <li><strong>月度虧損上限：</strong>這個月賠到多少就停[cite: 5]。</li>
+        <li><strong>最大連虧次數：</strong>連輸幾次就先休息[cite: 5]。</li>
+        <li><strong>總回撤上限：</strong>資金少掉多少就全面檢討[cite: 5]。</li>
+      </ul>
+      <p>數字自己訂，但要在賠之前訂[cite: 5]。連虧之後的你，不適合做這個決定[cite: 5]。</p>
+
+      <h2>EV 與破產風險怎麼自己算？</h2>
+      <div class="calc-section">
+        <div id="ev-app" style="font-family:'Noto Sans TC',sans-serif;max-width:480px;margin:0 auto;padding:20px;background:#0b132b;border-radius:16px;color:#f8fafc;box-shadow:0 10px 30px rgba(0,0,0,0.5);box-sizing:border-box;">
+          <h3 style="margin:0 0 16px 0;font-size:20px;font-weight:900;text-align:center;background:linear-gradient(135deg,#fff3b0 0%,#f7b801 50%,#d4af37 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">EV &amp; 破產風險計算機</h3>
+          <div style="margin-bottom:12px;">
+            <label for="bankroll" style="display:block;font-size:12px;color:#94a3b8;margin-bottom:4px;">總資金（籌碼）</label>
+            <input id="bankroll" type="number" value="10000" style="width:100%;padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#1e293b;color:#f8fafc;font-size:14px;box-sizing:border-box;" oninput="calc()">
+          </div>
+          <div style="margin-bottom:12px;">
+            <label for="bet" style="display:block;font-size:12px;color:#94a3b8;margin-bottom:4px;">每注金額</label>
+            <input id="bet" type="number" value="100" style="width:100%;padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#1e293b;color:#f8fafc;font-size:14px;box-sizing:border-box;" oninput="calc()">
+          </div>
+          <div style="margin-bottom:12px;">
+            <label for="winRate" style="display:block;font-size:12px;color:#94a3b8;margin-bottom:4px;">勝率（%）</label>
+            <input id="winRate" type="number" value="48" step="0.1" style="width:100%;padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#1e293b;color:#f8fafc;font-size:14px;box-sizing:border-box;" oninput="calc()">
+          </div>
+          <div style="margin-bottom:12px;">
+            <label for="odds" style="display:block;font-size:12px;color:#94a3b8;margin-bottom:4px;">賠率（贏1注拿回幾注，含本金）</label>
+            <input id="odds" type="number" value="2" step="0.1" style="width:100%;padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#1e293b;color:#f8fafc;font-size:14px;box-sizing:border-box;" oninput="calc()">
+          </div>
+          <div style="margin-bottom:12px;">
+            <label for="rounds" style="display:block;font-size:12px;color:#94a3b8;margin-bottom:4px;">目標次數（玩幾手）</label>
+            <input id="rounds" type="number" value="100" style="width:100%;padding:10px 12px;border:1px solid #334155;border-radius:10px;background:#1e293b;color:#f8fafc;font-size:14px;box-sizing:border-box;" oninput="calc()">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+            <div style="background:rgba(28,37,65,0.8);border:1px solid rgba(247,184,1,0.25);border-radius:12px;padding:12px;text-align:center;">
+              <div style="font-size:11px;color:#94a3b8;margin-bottom:4px;">每注 EV</div>
+              <div id="evPerBet" style="font-size:20px;font-weight:900;">--</div>
+            </div>
+            <div style="background:rgba(28,37,65,0.8);border:1px solid rgba(247,184,1,0.25);border-radius:12px;padding:12px;text-align:center;">
+              <div style="font-size:11px;color:#94a3b8;margin-bottom:4px;">總 EV（預期）</div>
+              <div id="totalEV" style="font-size:20px;font-weight:900;">--</div>
+            </div>
+            <div style="background:rgba(28,37,65,0.8);border:1px solid rgba(247,184,1,0.25);border-radius:12px;padding:12px;text-align:center;">
+              <div style="font-size:11px;color:#94a3b8;margin-bottom:4px;">破產風險</div>
+              <div id="ruinRisk" style="font-size:20px;font-weight:900;">--</div>
+            </div>
+            <div style="background:rgba(28,37,65,0.8);border:1px solid rgba(247,184,1,0.25);border-radius:12px;padding:12px;text-align:center;">
+              <div style="font-size:11px;color:#94a3b8;margin-bottom:4px;">凱利比例</div>
+              <div id="kelly" style="font-size:20px;font-weight:900;">--</div>
+            </div>
+          </div>
+          <div id="verdict" style="margin-top:16px;padding:12px;border-radius:10px;text-align:center;font-size:13px;font-weight:700;"></div>
+          <div style="margin-top:16px;">
+            <div style="font-size:11px;color:#94a3b8;margin-bottom:6px;">模擬 1000 次後資金分布</div>
+            <canvas id="simChart" width="440" height="160" style="width:100%;height:160px;border-radius:10px;background:#1e293b;"></canvas>
+          </div>
+          <div style="margin-top:12px;font-size:10px;color:#64748b;text-align:center;">
+            凱利公式：f* = (bp - q) / b ｜ 破產風險為蒙地卡羅模擬估算
+          </div>
+        </div>
+      </div>
+
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-q">EV 是正的，為什麼我今天還是輸？</div>
+        <p>因為 EV 是重複很多次之後的平均，單次和短期主要看運氣[cite: 5]。連輸、資金縮水都可能在平均出現之前就發生[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">勝率高就一定賺嗎？</div>
+        <p>不一定[cite: 5]。勝率 70%，但每次只賺 5,000、一賠就賠 20,000，EV 是負的[cite: 5]。勝率和賺賠大小要一起看[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">連輸之後，下一把會不會比較容易贏？</div>
+        <p>不會[cite: 5]。如果每次結果彼此獨立，過去的結果不會改變下一次的機率[cite: 5]。認為「連輸了該輪到贏」，就是賭徒謬誤[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">凱利公式是什麼？半凱利又是什麼？</div>
+        <p>凱利公式用勝率和賠率算出每次該下的資金比例：f = (b × p − q) ÷ b[cite: 5]。算出負數代表 EV 是負的，不該玩[cite: 5]。因為勝率和賠率是自己估的，很多人只用算出來的一半，這就是半凱利[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">單筆最多該冒多少風險？</div>
+        <p>沒有標準答案[cite: 5]。不少交易人把上限訂在總資金的 1% 到 2%，但這要看你的勝率、賺賠比和承受能力[cite: 5]。用計算機把你的數字填進去，看破產機率再決定[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">什麼是破產風險？</div>
+        <p>本文指資金自高點回撤到你設定的門檻（例如 50%）的機率[cite: 5]。它和勝率、賺賠比、下注比例都有關[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">莊家有優勢的遊戲，資金控管有用嗎？</div>
+        <p>只能讓你輸得慢一點[cite: 5]。EV 對你是負的，長期平均就是輸，資金控管改變不了這件事[cite: 5]。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">我的 EV 算得準嗎？</div>
+        <p>取決於你填的數字[cite: 5]。勝率和賺賠比要用真實紀錄，並把手續費、滑價、稅、抽水算進去[cite: 5]。</p>
+      </div>
+
+      <section class="disclaimer">
+        <h2>風險聲明</h2>
+        <p>本文為教育用途，不是投資、交易或下注建議[cite: 5]。文中的模擬結果假設每筆交易獨立、勝率與賺賠比固定、固定比例下注，真實市場不一定如此[cite: 5]。涉及金錢的決定，請依自己的財務狀況與風險承受能力判斷[cite: 5]。如果賭博或交易已經影響到你的生活，請找專業人士或你信任的人談談[cite: 5]。</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    PlayLogTW — 遊戲機制解析與風險控管筆記
+  </footer>
+
+  <script>
+  (function(){
+    function calc() {
+      var bankroll = parseFloat(document.getElementById('bankroll').value) || 0;
+      var bet = parseFloat(document.getElementById('bet').value) || 0;
+      var winRate = parseFloat(document.getElementById('winRate').value) || 0;
+      var odds = parseFloat(document.getElementById('odds').value) || 0;
+      var rounds = parseInt(document.getElementById('rounds').value) || 0;
+      var p = winRate / 100;
+      var q = 1 - p;
+      var b = odds - 1;
+      var evPerBet = bet * (p * b - q);
+      var totalEV = evPerBet * rounds;
+      var kelly = b > 0 ? ((p * b - q) / b * 100) : 0;
+      var evEl = document.getElementById('evPerBet');
+      var totalEl = document.getElementById('totalEV');
+      var kellyEl = document.getElementById('kelly');
+      evEl.textContent = (evPerBet >= 0 ? '+' : '') + evPerBet.toFixed(1);
+      evEl.style.color = evPerBet >= 0 ? '#34d399' : '#fb7185';
+      totalEl.textContent = (totalEV >= 0 ? '+' : '') + totalEV.toFixed(0);
+      totalEl.style.color = totalEV >= 0 ? '#34d399' : '#fb7185';
+      kellyEl.textContent = kelly.toFixed(1) + '%';
+      kellyEl.style.color = kelly > 0 ? '#34d399' : '#fb7185';
+      var ruinRisk = simulateRuin(bankroll, bet, p, b, rounds);
+      var ruinEl = document.getElementById('ruinRisk');
+      ruinEl.textContent = (ruinRisk * 100).toFixed(1) + '%';
+      if (ruinRisk < 0.05) ruinEl.style.color = '#34d399';
+      else if (ruinRisk < 0.3) ruinEl.style.color = '#fbbf24';
+      else ruinEl.style.color = '#fb7185';
+      var verdict = document.getElementById('verdict');
+      if (evPerBet < 0) {
+        verdict.style.background = 'rgba(251,113,133,0.15)';
+        verdict.style.color = '#fb7185';
+        verdict.textContent = '⚠️ 負 EV 遊戲，長期必輸';
+      } else if (ruinRisk > 0.3) {
+        verdict.style.background = 'rgba(251,191,36,0.15)';
+        verdict.style.color = '#fbbf24';
+        verdict.textContent = '⚡ 正 EV 但注碼過大，破產風險高';
+      } else {
+        verdict.style.background = 'rgba(52,211,153,0.15)';
+        verdict.style.color = '#34d399';
+        verdict.textContent = '✅ 正 EV，風險可控';
+      }
+      drawSim(bankroll, bet, p, b, rounds);
+    }
+    window.calc = calc;
+    function simulateRuin(bankroll, bet, p, b, rounds) {
+      if (bet <= 0 || bankroll <= 0) return 1;
+      var ruinCount = 0;
+      var sims = 1000;
+      for (var s = 0; s < sims; s++) {
+        var bal = bankroll;
+        for (var r = 0; r < rounds; r++) {
+          if (bal < bet) { ruinCount++; break; }
+          if (Math.random() < p) bal += bet * b;
+          else bal -= bet;
+        }
+      }
+      return ruinCount / sims;
+    }
+    function drawSim(bankroll, bet, p, b, rounds) {
+      var canvas = document.getElementById('simChart');
+      var ctx = canvas.getContext('2d');
+      var w = canvas.width, h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      var results = [];
+      for (var s = 0; s < 1000; s++) {
+        var bal = bankroll;
+        for (var r = 0; r < rounds; r++) {
+          if (bal < bet) break;
+          if (Math.random() < p) bal += bet * b;
+          else bal -= bet;
+        }
+        results.push(bal);
+      }
+      results.sort(function(a,b){return a-b;});
+      var min = results[0];
+      var max = results[results.length-1];
+      var range = max - min || 1;
+      var bins = 30;
+      var binSize = range / bins;
+      var counts = new Array(bins).fill(0);
+      for (var i = 0; i < results.length; i++) {
+        var idx = Math.min(Math.floor((results[i] - min) / binSize), bins - 1);
+        counts[idx]++;
+      }
+      var maxCount = Math.max.apply(null, counts);
+      var barW = (w - 20) / bins;
+      var zeroIdx = Math.max(0, Math.min(Math.floor((bankroll - min) / binSize), bins - 1));
+      for (var i = 0; i < bins; i++) {
+        var barH = (counts[i] / maxCount) * (h - 40);
+        var x = 10 + i * barW;
+        var y = h - 20 - barH;
+        ctx.fillStyle = i < zeroIdx ? 'rgba(251,113,133,0.7)' : 'rgba(52,211,153,0.7)';
+        ctx.fillRect(x, y, barW - 1, barH);
+      }
+      ctx.strokeStyle = '#fbbf24';
+      ctx.lineWidth = 2;
+      var zeroX = 10 + zeroIdx * barW + barW / 2;
+      ctx.beginPath();
+      ctx.moveTo(zeroX, 5);
+      ctx.lineTo(zeroX, h - 20);
+      ctx.stroke();
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('起始資金', zeroX, h - 5);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', calc);
+    } else {
+      calc();
+    }
+  })();
+  </script>
+</body>
+</html>
