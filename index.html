@@ -1,73 +1,347 @@
-// 檔案：/nav.js
-(function () {
-  const navConfig = [
-    { label: "資金與風控", href: "/risk-management/ev-and-bankroll.html" },
-    {
-      label: "遊戲教學",
-      href: "/game/",
-      children: [
-        { label: "百家樂規則", href: "/game/baccarat/baccarat-rules.html" }
-        // 未來新增文章，只要在這裡加一行物件，全站選單自動同步
-      ]
-    },
-    { label: "精選實測與工具", href: "/#featured" },
-    { label: "內容專區", href: "/#topics" },
-    { label: "網站地圖", href: "/sitemap.xml" }
-  ];
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>玩局誌 PlayLogTW｜實戰玩家數據與攻略筆記站</title>
+  <meta name="description" content="玩局誌 PlayLogTW 專注於規則拆解、機率與期望值計算、資金風控與實戰紀錄，用數據看懂每一把的風險與成本。" />
+  <link rel="canonical" href="https://playlogtw.com/" />
 
-  function renderNav() {
-    const container = document.getElementById("site-nav");
-    if (!container) return;
+  <!-- Favicon 與品牌圖示 -->
+  <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
+  <link rel="shortcut icon" href="/playlogtw-favicon.png" />
+  <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
+  <meta name="theme-color" content="#0b1120" />
 
-    const html = navConfig
-      .map((item) => {
-        if (item.children && item.children.length > 0) {
-          const subItems = item.children
-            .map((child) => `<li><a href="${child.href}">${child.label}</a></li>`)
-            .join("");
+  <!-- Open Graph 社群預覽 -->
+  <meta property="og:site_name" content="玩局誌 PlayLogTW" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="玩局誌 PlayLogTW｜實戰玩家數據與攻略筆記站" />
+  <meta property="og:description" content="用規則、機率、期望值與資金控管看懂牌桌風險，拒絕迷信與必勝話術。" />
+  <meta property="og:url" content="https://playlogtw.com/" />
+  <meta property="og:image" content="https://playlogtw.com/playlogtw-logo.png" />
 
-          return `
-            <div class="nav-item has-sub">
-              <div class="nav-row">
-                <a href="${item.href}">${item.label}</a>
-                <button class="sub-toggle" type="button" aria-label="展開${item.label}子選單" aria-expanded="false">▾</button>
-              </div>
-              <ul class="sub-menu">${subItems}</ul>
-            </div>
-          `;
-        }
-        return `<a href="${item.href}">${item.label}</a>`;
-      })
-      .join("");
-
-    container.innerHTML = `<nav class="site-nav" aria-label="主導覽列">${html}</nav>`;
-
-    // 手機版漢堡選單開合
-    const menuToggle = document.querySelector(".menu-toggle");
-    const siteNav = container.querySelector(".site-nav");
-    if (menuToggle && siteNav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = siteNav.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-      });
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #162033;
+      --surface-2: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f59e0b;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .site-nav a:hover {
+      color: var(--text);
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sub-toggle {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .sub-toggle:hover,
+    .nav-item:hover .sub-toggle {
+      color: var(--text);
+    }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 170px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 30;
+    }
+    .sub-menu li a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .sub-menu li a:hover {
+      background: var(--surface-2);
+      color: var(--gold);
+      text-decoration: none;
+    }
+    @media (hover: hover) and (min-width: 769px) {
+      .nav-item:hover .sub-menu {
+        display: block;
+      }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: inline-block;
+      }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .site-nav.open {
+        display: flex;
+      }
+      .site-nav > a,
+      .nav-row {
+        padding: 8px 4px;
+      }
+      .nav-row {
+        justify-content: space-between;
+      }
+      .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        margin-left: 10px;
+        padding: 4px 0 4px 10px;
+        background: transparent;
+      }
+      .nav-item.open .sub-menu {
+        display: block;
+      }
     }
 
-    // 子選單開合
-    const subToggle = container.querySelector(".sub-toggle");
-    const navItem = container.querySelector(".nav-item.has-sub");
-    if (subToggle && navItem) {
-      subToggle.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const expanded = navItem.classList.toggle("open");
-        subToggle.setAttribute("aria-expanded", String(expanded));
-      });
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
     }
-  }
+    .tag {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+      line-height: 1.25;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 28px;
+      max-width: 740px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0b1120;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .btn-primary:hover { text-decoration: none; opacity: 0.92; }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .btn-secondary:hover { text-decoration: none; border-color: var(--accent); }
+    h2 {
+      font-size: 1.32rem;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.4;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/playlogtw-logo.png" alt="玩局誌 PlayLogTW Logo" />
+      </a>
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", renderNav);
-  } else {
-    renderNav();
-  }
-})();
+      <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">
+        ☰
+      </button>
+
+      <!-- 共用選單容器（由根目錄 /nav.js 自動填入） -->
+      <div id="site-nav"></div>
+    </div>
+  </header>
+
+  <main>
+    <span class="tag">數據拆解 · 規則說明 · 風險意識</span>
+    <h1>把每一把的錢花在哪裡，先算清楚再上桌</h1>
+    <p class="lead">
+      玩局誌 PlayLogTW 整理各類牌桌與博弈遊戲的規則、算點與莊家優勢，搭配實際局數紀錄與資金控管邏輯，幫你跳開必勝話術與情緒追單。
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="/game/baccarat/baccarat-rules.html">開始學百家樂規則</a>
+      <a class="btn-secondary" href="/game/">瀏覽遊戲教學總覽</a>
+    </div>
+
+    <section id="featured">
+      <h2>精選指南</h2>
+      <div class="grid">
+        <article class="card">
+          <div>
+            <span class="card-badge">百家樂 · 新手入門</span>
+            <h3><a href="/game/baccarat/baccarat-rules.html">從零開始學百家樂規則：算點方式、補牌表、賠率與莊家優勢</a></h3>
+            <p>從下注選項、個位數算點、閒莊補牌表到 300 局實戰紀錄，一次看懂莊、閒、和的差異。</p>
+          </div>
+          <div><a href="/game/baccarat/baccarat-rules.html">閱讀文章 →</a></div>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="card-badge">資金與風控</span>
+            <h3><a href="/risk-management/ev-and-bankroll.html">期望值是正的，為什麼我還是輸光了？波動率、注碼比例與破產風險拆解</a></h3>
+            <p>把注碼比例、波動率與破產風險講透，理解為什麼短線手氣與注碼控管決定你能撐多久。</p>
+          </div>
+          <div><a href="/risk-management/ev-and-bankroll.html">閱讀文章 →</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    玩局誌 PlayLogTW · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
+  </footer>
+
+  <!-- 呼叫根目錄的共用選單腳本 -->
+  <script src="/nav.js" defer></script>
+</body>
+</html>
