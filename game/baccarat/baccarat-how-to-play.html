@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>百家樂怎麼玩？圖解牌桌、投注區與每局 4 步驟｜PlayLogTW 玩局誌</title>
+  <meta name="description" content="百家樂怎麼玩？用圖解帶你看懂牌桌、三個投注區和佣金盒，再跟著下注、發牌、補牌、結算四個步驟，完整走一局。" />
+  <link rel="canonical" href="https://playlogtw.com/game/baccarat/baccarat-how-to-play.html" />
+
+  <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
+  <link rel="shortcut icon" href="/playlogtw-favicon.png" />
+  <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <meta property="og:site_name" content="玩局誌 PlayLogTW" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="百家樂怎麼玩？圖解牌桌、投注區與每局 4 步驟｜PlayLogTW 玩局誌" />
+  <meta property="og:description" content="用圖解看懂百家樂牌桌、三個投注區和佣金盒，再跟著四個步驟完整走一局。" />
+  <meta property="og:url" content="https://playlogtw.com/game/baccarat/baccarat-how-to-play.html" />
+  <!-- TODO：之後換成 1200×630 的專用分享圖 -->
+  <meta property="og:image" content="https://playlogtw.com/playlogtw-favicon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "百家樂怎麼玩？圖解牌桌、投注區與每局 4 步驟",
+    "description": "用圖解看懂百家樂牌桌、三個投注區和佣金盒，再跟著四個步驟完整走一局。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-11-20",
+    "dateModified": "2026-11-20",
+    "author": { "@type": "Organization", "name": "玩局誌 PlayLogTW" },
+    "publisher": { "@type": "Organization", "name": "玩局誌 PlayLogTW" },
+    "mainEntityOfPage": "https://playlogtw.com/game/baccarat/baccarat-how-to-play.html"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1120; --surface: #162033; --surface-2: #1e293b; --text: #f8fafc;
+      --muted: #94a3b8; --gold: #f59e0b; --accent: #38bdf8; --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.8;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 20;
+    }
+    .nav-wrap {
+      max-width: 920px; margin: 0 auto; padding: 10px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-logo { height: 40px; width: auto; max-width: 160px; object-fit: contain; border-radius: 6px; display: block; }
+    .menu-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .site-nav a { color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--text); }
+    .nav-item { position: relative; }
+    .nav-row { display: inline-flex; align-items: center; gap: 4px; }
+    .sub-toggle {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .sub-toggle:hover,
+    .nav-item:hover .sub-toggle { color: var(--text); }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 170px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 30;
+    }
+    .sub-menu li a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .sub-menu li a:hover {
+      background: var(--surface-2);
+      color: var(--gold);
+      text-decoration: none;
+    }
+    @media (hover: hover) and (min-width: 769px) {
+      .nav-item:hover .sub-menu { display: block; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: inline-block; }
+      #site-nav { width: 100%; }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .site-nav.open { display: flex; }
+      .site-nav > a,
+      .nav-row { padding: 8px 4px; }
+      .nav-row { justify-content: space-between; }
+      .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        margin-left: 10px;
+        padding: 4px 0 4px 10px;
+        background: transparent;
+      }
+      .nav-item.open .sub-menu { display: block; }
+    }
+
+    main { max-width: 920px; margin: 0 auto; padding: 32px 20px 72px; }
+    .breadcrumb { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
+    .tag {
+      display: inline-block; background: rgba(245, 158, 11, 0.15); color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38); padding: 3px 10px; border-radius: 999px;
+      font-size: 0.82rem; font-weight: 700; margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(1.6rem, 3.2vw, 2.2rem); line-height: 1.28; }
+    .byline { color: var(--muted); font-size: 0.86rem; margin: 0 0 18px; }
+    .lead { color: var(--muted); font-size: 1.02rem; margin: 0 0 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    h2 { font-size: 1.32rem; margin: 36px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1.08rem; margin: 22px 0 8px; color: var(--gold); }
+    p { margin: 0 0 14px; color: #e2e8f0; }
+    ul, ol { margin: 0 0 18px; padding-left: 22px; color: #e2e8f0; }
+    li { margin-bottom: 8px; }
+    .box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 18px 0 24px; }
+    .box-title { font-weight: 700; color: var(--gold); margin-bottom: 8px; display: block; }
+    .box ol { margin-bottom: 0; }
+    .table-wrap { overflow-x: auto; margin: 16px 0 24px; }
+    table { width: 100%; min-width: 420px; border-collapse: collapse; background: var(--surface); font-size: 0.94rem; }
+    th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: var(--surface-2); color: var(--gold); font-weight: 700; }
+
+    figure { margin: 18px 0 24px; }
+    figcaption { color: var(--muted); font-size: 0.86rem; text-align: center; margin-top: 8px; }
+    .diagram { display: block; width: 100%; height: auto; }
+    .t-bg { fill: var(--surface); stroke: var(--border); stroke-width: 2; }
+    .zone { fill: var(--surface-2); stroke: var(--gold); stroke-width: 1.5; }
+    .cbox { fill: var(--surface-2); stroke: var(--border); stroke-width: 1.5; }
+    .lbl { fill: var(--text); font-size: 26px; font-weight: 700; text-anchor: middle; }
+    .sub { fill: var(--muted); font-size: 17px; text-anchor: middle; }
+    .badge { fill: var(--gold); }
+    .badge-t { fill: #0b1120; font-size: 17px; font-weight: 700; text-anchor: middle; }
+
+    .cards { display: grid; gap: 12px; list-style: none; padding: 0; margin: 16px 0 24px; }
+    .cards.four { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .cards.three { grid-template-columns: repeat(3, 1fr); }
+    .card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 0; }
+    .card b { display: block; color: var(--gold); margin-bottom: 4px; }
+    .card span { color: #e2e8f0; font-size: 0.94rem; }
+    .cards.four .card:not(:last-child)::after { content: "→"; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); color: var(--gold); }
+    @media (max-width: 720px) {
+      .cards.four, .cards.three { grid-template-columns: 1fr; }
+      .cards.four .card:not(:last-child)::after { display: none; }
+    }
+
+    .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; margin-bottom: 6px; }
+    .faq-item p { margin: 0; }
+    .next-box {
+      margin-top: 40px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.08));
+      border: 1px solid var(--border); border-radius: 14px; padding: 20px;
+    }
+    .disclaimer {
+      margin-top: 28px; padding: 14px 16px; border-radius: 10px; background: rgba(148, 163, 184, 0.08);
+      border: 1px solid var(--border); color: var(--muted); font-size: 0.88rem;
+    }
+    footer { border-top: 1px solid var(--border); padding: 24px 20px; text-align: center; color: var(--muted); font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/playlogtw-logo.png" alt="玩局誌 PlayLogTW Logo" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">☰</button>
+
+      <!-- 共用選單容器（由根目錄 /nav.js 自動填入） -->
+      <div id="site-nav"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">首頁</a> / 百家樂專區 / 百家樂怎麼玩
+    </div>
+
+    <span class="tag">百家樂新手入門 · 圖解流程</span>
+    <h1>百家樂怎麼玩？圖解牌桌、投注區與每局 4 步驟</h1>
+    <!-- TODO：作者名稱與日期請換成實際資料，並連到作者頁或關於頁 -->
+    <p class="byline">
+      作者：<a href="/">玩局誌 PlayLogTW</a> ｜ 發布：<time datetime="2026-11-20">2026-11-20</time> ｜ 更新：<time datetime="2026-11-20">2026-11-20</time>
+    </p>
+    <p class="lead">
+      第一次坐到百家樂桌前，最容易搞混的往往不是規則，而是桌上那一堆格子：哪一格押莊、哪一格押閒，旁邊那排編號小方格又是做什麼的？
+    </p>
+    <p>
+      這篇用圖解回答「百家樂怎麼玩」：先認識牌桌上的區域，再跟著四個步驟走完一局。算點和補牌的細節，請看<a href="/game/baccarat/baccarat-rules.html">百家樂規則</a>那篇，這裡只講流程。
+    </p>
+
+    <h2>認識牌桌：百家樂牌桌上有哪些區域</h2>
+    <p>下面是實體百家樂桌的簡化示意圖。各家賭場的排版略有不同，但這三個區域都找得到。</p>
+
+    <figure>
+      <svg class="diagram" viewBox="0 0 720 430" role="img" aria-labelledby="tbl-t tbl-d">
+        <title id="tbl-t">百家樂牌桌示意圖</title>
+        <desc id="tbl-d">半圓形牌桌，直線一側是荷官區，中間是閒、和、莊三個投注區，靠近玩家的一側是一排編號的佣金盒。</desc>
+        <path class="t-bg" d="M30 30 H690 V230 A330 190 0 0 1 30 230 Z" />
+
+        <rect class="zone" x="240" y="48" width="240" height="72" rx="10" />
+        <text class="lbl" x="360" y="82">荷官區</text>
+        <text class="sub" x="360" y="106">牌靴 · 籌碼盤</text>
+        <circle class="badge" cx="240" cy="48" r="15" /><text class="badge-t" x="240" y="54">1</text>
+
+        <rect class="zone" x="70" y="150" width="210" height="120" rx="10" />
+        <text class="lbl" x="175" y="205">閒</text>
+        <text class="sub" x="175" y="236">1 賠 1</text>
+        <circle class="badge" cx="70" cy="150" r="15" /><text class="badge-t" x="70" y="156">2</text>
+
+        <rect class="zone" x="300" y="150" width="120" height="120" rx="10" />
+        <text class="lbl" x="360" y="205">和</text>
+        <text class="sub" x="360" y="236">1 賠 8</text>
+        <circle class="badge" cx="300" cy="150" r="15" /><text class="badge-t" x="300" y="156">2</text>
+
+        <rect class="zone" x="440" y="150" width="210" height="120" rx="10" />
+        <text class="lbl" x="545" y="205">莊</text>
+        <text class="sub" x="545" y="236">1 賠 0.95</text>
+        <circle class="badge" cx="440" cy="150" r="15" /><text class="badge-t" x="440" y="156">2</text>
+
+        <rect class="cbox" x="210" y="315" width="44" height="44" rx="6" />
+        <rect class="cbox" x="274" y="315" width="44" height="44" rx="6" />
+        <rect class="cbox" x="338" y="315" width="44" height="44" rx="6" />
+        <rect class="cbox" x="402" y="315" width="44" height="44" rx="6" />
+        <rect class="cbox" x="466" y="315" width="44" height="44" rx="6" />
+        <text class="sub" x="232" y="344">1</text><text class="sub" x="296" y="344">2</text>
+        <text class="sub" x="360" y="344">3</text><text class="sub" x="424" y="344">4</text>
+        <text class="sub" x="488" y="344">5</text>
+        <text class="sub" x="360" y="388">佣金盒 · 依座位編號</text>
+        <circle class="badge" cx="210" cy="315" r="15" /><text class="badge-t" x="210" y="321">3</text>
+      </svg>
+      <figcaption>百家樂牌桌示意圖（簡化版，實際桌面以現場為準）</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>① 荷官區：</strong>荷官在這裡發牌、收籌碼、賠付。牌從牌靴發出，通常用八副牌。</li>
+      <li><strong>② 三個投注區：</strong>閒、和、莊。每局開始前，把籌碼放進你要押的那一格。</li>
+      <li><strong>③ 佣金盒：</strong>實體賭場常見。押莊贏了要抽 5% 佣金，荷官會在你座位前的編號格子標出欠多少，之後再結清。線上桌和免佣桌不一定有這個區域。</li>
+    </ul>
+    <p>有些桌還有莊對、閒對這類附加投注區，本文先不談，以最基本的三個為主。</p>
+
+    <h3>牌桌上常聽到的幾個詞</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width: 28%;">名稱</th><th>意思</th></tr></thead>
+        <tbody>
+          <tr><td><strong>莊（Banker）</strong></td><td>其中一手牌的名稱，押莊就是賭這一手點數比較大。</td></tr>
+          <tr><td><strong>閒（Player）</strong></td><td>另一手牌的名稱，押閒就是賭這一手點數比較大。</td></tr>
+          <tr><td><strong>和（Tie）</strong></td><td>兩手點數一樣。</td></tr>
+          <tr><td><strong>荷官（Dealer）</strong></td><td>負責發牌與結算的人，也有人叫發牌官。</td></tr>
+          <tr><td><strong>牌靴（Shoe）</strong></td><td>裝牌的盒子，荷官從裡面一張一張抽牌。</td></tr>
+          <tr><td><strong>佣金（Commission）</strong></td><td>押莊贏錢時，賭場抽走的 5%。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>百家樂怎麼玩：每局 4 個步驟</h2>
+    <p>每一局都照同樣的順序走，玩家真正要動手的只有第一步。</p>
+
+    <ol class="cards four">
+      <li class="card"><b>1. 下注</b><span>發牌前，把籌碼放進莊、閒、和其中一格。</span></li>
+      <li class="card"><b>2. 發牌</b><span>荷官從牌靴發牌，閒、莊各拿兩張。</span></li>
+      <li class="card"><b>3. 補牌</b><span>依固定規則，決定誰要再補一張，玩家不用操作。</span></li>
+      <li class="card"><b>4. 結算</b><span>比點數大小，贏的賠付，輸的收走。</span></li>
+    </ol>
+
+    <h3>步驟 1：下注，三選一</h3>
+    <p>百家樂靠猜結果，所以一定要在發牌前下注。荷官宣布停止下注之後，就不能再加碼或改押。三個選項的賠法如下：</p>
+
+    <ul class="cards three">
+      <li class="card"><b>押莊</b><span>押 100，贏了拿 95。贏的時候抽 5% 佣金，所以賠 0.95。</span></li>
+      <li class="card"><b>押閒</b><span>押 100，贏了拿 100。不抽佣金。</span></li>
+      <li class="card"><b>押和</b><span>押 100，贏了拿 800。多數桌是 1 賠 8，少數桌是 1 賠 9。</span></li>
+    </ul>
+
+    <p>開出和局時，押莊和押閒的注碼會退還，只有押和的人贏。三種下注的長期差異，在<a href="/game/baccarat/baccarat-rules.html">百家樂規則</a>那篇有完整數字。</p>
+
+    <h2>跟著跑一局：從下注到結算</h2>
+    <div class="box">
+      <span class="box-title">範例：押莊 100 元</span>
+      <ol>
+        <li><strong>下注：</strong>你把 100 元放進「莊」。</li>
+        <li><strong>發牌：</strong>閒家拿到 3 和 4，共 7 點。莊家拿到 K 和 5，共 5 點。</li>
+        <li><strong>補牌：</strong>閒家 7 點，不補。閒家沒補牌時，莊家 0 到 5 點要補，所以莊家補一張，拿到 4，共 9 點。</li>
+        <li><strong>結算：</strong>莊 9 點贏閒 7 點。你贏 95 元（100 元的 5% 佣金已扣掉），連本金拿回 195 元。</li>
+      </ol>
+    </div>
+    <p>如果莊家補到的是 2，兩邊都是 7 點，就是和局。你押的 100 元退回，不輸不贏。</p>
+
+    <h2>新手常問的三個問題</h2>
+    <div class="faq-item">
+      <div class="faq-q">要自己發牌嗎？</div>
+      <p>一般由荷官發牌。有些桌會讓大額玩家開牌，這只是儀式，不影響結果。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">看不懂補牌表，也能玩嗎？</div>
+      <p>可以。補牌由荷官依規則執行，你只要決定下注。想知道為什麼多了一張牌，再回頭看<a href="/game/baccarat/baccarat-rules.html">補牌表</a>。</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">可以同時押莊和閒嗎？</div>
+      <p>有些桌不允許。就算允許，兩邊大致互相抵銷，只剩佣金和和局的損失，通常不划算。</p>
+    </div>
+
+    <div class="next-box">
+      <span class="box-title">下一步：搞懂規則與賠率</span>
+      <p style="margin-bottom: 0;">
+        → <a href="/game/baccarat/baccarat-rules.html">從零開始學百家樂規則：算點方式、補牌表、賠率與莊家優勢</a>
+      </p>
+    </div>
+
+    <div class="disclaimer">
+      <strong>理性遊戲提醒：</strong>台灣刑法對賭博財物有相關規範，請先確認所在地的法規再決定是否參與。未滿 18 歲不得參與，若覺得自己已經難以控制，請盡早尋求協助。
+    </div>
+  </main>
+
+  <footer>
+    玩局誌 PlayLogTW · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
+  </footer>
+
+  <!-- 呼叫根目錄的共用選單腳本 -->
+  <script src="/nav.js" defer></script>
+</body>
+</html>
