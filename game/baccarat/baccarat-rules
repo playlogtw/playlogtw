@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>百家樂規則從零開始學：算點方式、補牌表、賠率與莊家優勢｜PlayLogTW 玩局誌</title>
+  <meta name="description" content="百家樂規則一次看懂：算點方式、補牌表、賠率全說明，並用實際數字比較莊家優勢，告訴你押莊、押閒、押和每一把的錢花在哪裡。" />
+  <link rel="canonical" href="https://playlogtw.com/game/baccarat/baccarat-rules.html" />
+
+  <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
+  <link rel="shortcut icon" href="/playlogtw-favicon.png" />
+  <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <meta property="og:site_name" content="玩局誌 PlayLogTW" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="百家樂規則從零開始學：算點方式、補牌表、賠率與莊家優勢｜PlayLogTW 玩局誌" />
+  <meta property="og:description" content="百家樂規則一次看懂：算點方式、補牌表、賠率全說明，並用實際數字比較莊家優勢，告訴你押莊、押閒、押和每一把的錢花在哪裡。" />
+  <meta property="og:url" content="https://playlogtw.com/game/baccarat/baccarat-rules.html" />
+  <!-- TODO：之後換成 1200×630 的專用分享圖，例如 https://playlogtw.com/og-baccarat-rules.png -->
+  <meta property="og:image" content="https://playlogtw.com/playlogtw-favicon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "百家樂規則從零開始學：算點方式、補牌表、賠率與莊家優勢",
+    "description": "百家樂規則一次看懂：算點方式、補牌表、賠率全說明，並用實際數字比較莊家優勢。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-11-20",
+    "dateModified": "2026-11-20",
+    "author": { "@type": "Organization", "name": "玩局誌 PlayLogTW" },
+    "publisher": { "@type": "Organization", "name": "玩局誌 PlayLogTW" },
+    "mainEntityOfPage": "https://playlogtw.com/game/baccarat/baccarat-rules.html"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #162033;
+      --surface-2: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f59e0b;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 10px; }
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 0.95rem; }
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--text); text-decoration: none; }
+    main { max-width: 920px; margin: 0 auto; padding: 32px 20px 72px; }
+    .breadcrumb { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
+    .tag {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(1.6rem, 3.2vw, 2.2rem); line-height: 1.28; }
+    .byline { color: var(--muted); font-size: 0.86rem; margin: 0 0 18px; }
+    .lead {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0 0 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.32rem;
+      margin: 36px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.08rem; margin: 22px 0 8px; color: var(--gold); }
+    p { margin: 0 0 14px; color: #e2e8f0; }
+    ul, ol { margin: 0 0 18px; padding-left: 22px; color: #e2e8f0; }
+    li { margin-bottom: 8px; }
+    .box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 18px 0 24px;
+    }
+    .box-title { font-weight: 700; color: var(--gold); margin-bottom: 8px; display: block; }
+    .table-wrap { overflow-x: auto; margin: 16px 0 24px; }
+    table {
+      width: 100%;
+      min-width: 420px;
+      border-collapse: collapse;
+      background: var(--surface);
+      font-size: 0.94rem;
+    }
+    th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: var(--surface-2); color: var(--gold); font-weight: 700; }
+    .next-box {
+      margin-top: 40px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .disclaimer {
+      margin-top: 28px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/playlogtw-logo.png" alt="玩局誌 PlayLogTW Logo" />
+      </a>
+      <nav>
+        <a href="/">首頁</a>
+        <a href="/risk-management/ev-and-bankroll.html">資金與風控</a>
+        <a href="/sitemap.xml">網站地圖</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">首頁</a> / 百家樂專區 / 百家樂規則
+    </div>
+
+    <span class="tag">百家樂新手入門 · 規則與數據</span>
+    <h1>從零開始學百家樂規則：算點方式、補牌表、賠率與莊家優勢</h1>
+    <!-- TODO：作者名稱與日期請換成實際資料，並連到作者頁或關於頁 -->
+    <p class="byline">
+      作者：<a href="/">玩局誌 PlayLogTW</a> ｜ 發布：<time datetime="2026-11-20">2026-11-20</time> ｜ 更新：<time datetime="2026-11-20">2026-11-20</time>
+    </p>
+    <p class="lead">
+      百家樂是賭場裡玩法最簡單的遊戲之一，你全程只需要選莊、閒、和其中一個押。但很多人玩了好幾個月，還是看不懂牌為什麼有時補、有時不補，也不知道自己押的那一格，對錢包的傷害差了十幾倍。
+    </p>
+    <p>
+      這篇把百家樂規則從頭講完：算點方式、補牌表、賠率，還有莊家優勢到底多大。我不會教你必勝法，因為不存在。但看完，你會知道每一把的錢花在哪裡。
+    </p>
+
+    <h2>百家樂怎麼玩？先搞懂三個下注選項</h2>
+    <p>每一局你只要決定押誰會贏，選項有三個：</p>
+    <ul>
+      <li><strong>押莊</strong>：賭莊家那一手的點數比較大</li>
+      <li><strong>押閒</strong>：賭閒家那一手的點數比較大</li>
+      <li><strong>押和</strong>：賭兩邊點數一樣</li>
+    </ul>
+    <p>
+      「莊」和「閒」只是兩手牌的名稱，跟你和賭場誰對賭無關，你想押哪邊都可以。
+    </p>
+    <p>
+      牌由荷官發，莊閒各兩張，必要時再補一張。補不補、補給誰，全由固定規則決定，玩家不用動手。目前最常見的版本是 Punto Banco，通常用八副牌。
+    </p>
+
+    <h2>百家樂算點方式：只看個位數</h2>
+    <p>先記牌面點數：</p>
+    <ul>
+      <li><strong>A</strong> 算 1 點</li>
+      <li><strong>2 到 9</strong> 照牌面算</li>
+      <li><strong>10、J、Q、K</strong> 都算 0 點</li>
+    </ul>
+    <p>兩張牌加起來，只取個位數，十位數直接丟掉。舉幾個例子：</p>
+    <ul>
+      <li><strong>7 + 8 = 15</strong>，算 5 點</li>
+      <li><strong>K + 9 = 9</strong>，算 9 點</li>
+      <li><strong>6 + 9 = 15</strong>，算 5 點</li>
+      <li><strong>10 + Q = 0</strong>，算 0 點（點數最小，但不算輸，要跟對手比大小才分勝負）</li>
+    </ul>
+    <p>
+      單手最大是 9 點。前兩張牌加起來是 8 點或 9 點，叫做「天牌」，莊閒雙方都不能再補牌，直接比大小。
+    </p>
+
+    <h2>百家樂補牌表：閒家和莊家什麼時候補第三張牌</h2>
+    <p>
+      補牌規則是固定的，荷官照表執行，你不用背。但看得懂，才知道這一局為什麼多了一張牌。只要有一方拿到天牌（8 或 9 點），雙方都不補牌。
+    </p>
+    <p>閒家的規則很單純：</p>
+    <ul>
+      <li><strong>0 到 5 點</strong>：補一張</li>
+      <li><strong>6 到 7 點</strong>：不補</li>
+    </ul>
+    <p>
+      莊家的規則要看閒家有沒有補牌。閒家沒補（6 或 7 點）時，莊家照同樣的標準：0 到 5 點補，6 到 7 點不補。閒家有補牌時，就看莊家前兩張的點數，以及閒家補到的那張牌：
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 28%;">莊家前兩張點數</th>
+            <th>什麼時候補牌</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>0、1、2 點</strong></td><td>一律補牌</td></tr>
+          <tr><td><strong>3 點</strong></td><td>閒家第三張不是 8 就補</td></tr>
+          <tr><td><strong>4 點</strong></td><td>閒家第三張是 2 到 7 就補</td></tr>
+          <tr><td><strong>5 點</strong></td><td>閒家第三張是 4 到 7 就補</td></tr>
+          <tr><td><strong>6 點</strong></td><td>閒家第三張是 6 或 7 才補</td></tr>
+          <tr><td><strong>7 點</strong></td><td>不補</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box">
+      <span class="box-title">補牌實例對照</span>
+      閒家前兩張是 2 + 3 = 5 點，補了一張 K，維持 5 點。莊家手上是 4 點，閒家第三張 K 算 0 點，不在 2 到 7 的範圍內，所以莊家不補牌。多看幾局、多對照幾次，表自然就記住了。
+    </div>
+
+    <h2>百家樂賠率：押莊、押閒、押和各賠多少</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%;">下注</th>
+            <th style="width: 22%;">賠率</th>
+            <th>說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>押閒</strong></td><td>1 賠 1</td><td>押 100，贏了獲利 100</td></tr>
+          <tr><td><strong>押莊</strong></td><td>1 賠 0.95</td><td>押 100，贏了獲利 95（抽 5% 佣金）</td></tr>
+          <tr><td><strong>押和</strong></td><td>通常 1 賠 8</td><td>押 100，贏了獲利 800</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul>
+      <li>開和局時，押莊和押閒的注碼會退還，不輸不贏。</li>
+      <li>有些平台押和是 1 賠 9，莊閒賠率也可能不同，下注前先看桌面說明。</li>
+    </ul>
+    <p>押莊要被抽佣金，看起來吃虧，但從下面的數字看，它其實是三種下注裡損失最小的。</p>
+
+    <h2>莊家優勢是多少？為什麼押莊反而比較划算</h2>
+    <p>
+      以八副牌、押和 1 賠 8 計算。「莊家優勢」是指長期下來，賭場平均每一塊錢能留下多少，數字越小，對玩家越有利：
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">下注</th>
+            <th>莊家優勢</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>押莊</strong></td><td>約 1.06%</td></tr>
+          <tr><td><strong>押閒</strong></td><td>約 1.24%</td></tr>
+          <tr><td><strong>押和</strong></td><td>約 14.36%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      押莊要抽 5% 佣金，優勢為什麼還是最低？因為莊家是最後行動的那一手，看完閒家補不補、補了什麼，才決定自己補不補。這個位置的好處，大到扣完佣金還略勝押閒。
+    </p>
+    <p>
+      換成金額：每局押 500 元，打 300 局，總下注 15 萬元。押莊長期平均損失約 1,590 元；同樣的注碼改押和，損失約 2 萬 1,000 元，差了十幾倍。押和賠 8 倍看起來很誘人，但和局只有約 9.5% 的機率，是三種下注裡最吃虧的。
+    </p>
+
+    <h3>我做過一次 300 局的紀錄</h3>
+    <!-- TODO：建議在這裡放一張筆記本照片（可遮掉不想公開的部分），並補上大概的時間與場所類型 -->
+    <p>
+      我在海外賭場用筆記本逐局記錄過 300 局，原本計畫每局固定押莊 500 元。開頭 60 局莊贏了 34 把，勝率快 57%，我覺得手感很好，從第 61 局起把注碼加到 800 元。
+    </p>
+    <p>
+      加碼打了 30 局，我覺得心態不對，第 91 局起退回 500，一路打完。所以實際總下注不是 15 萬，而是 159,000 元（270 局 × 500 + 30 局 × 800）。
+    </p>
+    <p>
+      300 局打完，莊贏 137 把（勝率約 45.7%，跟理論值接近），和局 28 次，我虧了約 2,100 元，理論平均約 1,700 元。1.06% 是幾萬局的平均，300 局只是其中一小段，這個差距屬於正常波動，我沒辦法說是哪一段造成的。
+    </p>
+    <p>
+      回頭看，前 60 局的順風只是運氣，我卻當成手感，才會加碼。加注不會改變期望值，只會讓輸贏的金額變大。
+    </p>
+    <p>
+      和局也一樣。300 局只開了 28 次，約 9.3%，跟理論的 9.5% 差不多。中途有 30 幾局沒開和，同桌一位玩家一直押和，嘴上說「該來了」。我沒有他的下注紀錄，只記得他的臉色越來越難看。牌不記得上一局發生過什麼，沒有「該來了」這回事。
+    </p>
+    <p>
+      紀錄裡也出現過連贏 5 把莊，看起來像手氣，其實是正常波動。押莊只是虧得比較慢，不是會贏。
+    </p>
+
+    <h2>連莊、路單、加倍下注有用嗎？</h2>
+    <p>
+      很多人看路單，覺得「莊已經連開五把，下一把應該要換了」，或「這桌正在連莊，跟著押」。
+    </p>
+    <p>
+      兩種想法都沒有根據。牌是洗過的，每一局都是獨立事件，上一局開什麼，不會影響下一局。路單看起來有規律，那是事後看圖找出來的，拿來預測下一把沒有用。
+    </p>
+    <p>
+      另一個常見做法是「輸了就加倍下注」，想靠一次贏把前面全補回來。算一下就知道問題在哪：起手押 100，連輸 7 把，要押的金額是 100、200、400、800、1,600、3,200、6,400，第 8 把得押 12,800。這時你已經輸掉 12,700 元，而且很多桌有下注上限，可能根本押不下去。
+    </p>
+    <p>
+      連輸 7 把的機率不高，但一個晚上打幾百局，遇到並不稀奇。
+    </p>
+
+    <h2>新手上桌前的 4 個小提醒</h2>
+    <ol>
+      <li><strong>先定預算和停損點。</strong>決定今天最多輸多少，到了就收手。</li>
+      <li><strong>先小額或試玩。</strong>先熟悉流程和節奏，不要急著下大注。</li>
+      <li><strong>優先選莊或閒。</strong>押和的莊家優勢太高，不適合當主要下注。</li>
+      <li><strong>輸了別追。</strong>想把輸掉的撈回來，通常會輸得更多。</li>
+    </ol>
+
+    <h2>下次上桌前，先做這一件事</h2>
+    <p>
+      把今天的停損金額寫在手機備忘錄，打到那個數字就離桌。規則看懂只能讓你知道錢花在哪裡，長期的結果還是由莊家優勢決定。把百家樂當娛樂，預算才守得住。
+    </p>
+
+    <div class="next-box">
+      <span class="box-title">想更深入看資金與波動怎麼算？</span>
+      <p style="margin-bottom: 0;">
+        → 延伸閱讀：<a href="/risk-management/ev-and-bankroll.html">期望值是正的，為什麼我還是輸光了？波動率、注碼比例與破產風險拆解</a>
+      </p>
+    </div>
+
+    <div class="disclaimer">
+      <strong>理性遊戲提醒：</strong>台灣刑法對賭博財物有相關規範，請先確認所在地的法規再決定是否參與。未滿 18 歲不得參與，若覺得自己已經難以控制，請盡早尋求協助。
+    </div>
+  </main>
+
+  <footer>
+    玩局誌 PlayLogTW · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
+  </footer>
+</body>
+</html>
