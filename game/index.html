@@ -19,7 +19,7 @@
   <meta property="og:title" content="遊戲教學總覽：規則、算點與實戰拆解｜PlayLogTW 玩局誌" />
   <meta property="og:description" content="整理百家樂規則、算點方式、補牌表與莊家優勢解析，並持續擴充各類遊戲教學。" />
   <meta property="og:url" content="https://playlogtw.com/game/" />
-  <meta property="og:image" content="https://playlogtw-favicon.png" />
+  <meta property="og:image" content="https://playlogtw.com/playlogtw-favicon.png" />
 
   <style>
     :root {
@@ -48,7 +48,7 @@
       backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
     }
     .nav-wrap {
       max-width: 920px;
@@ -73,14 +73,96 @@
       border-radius: 6px;
       display: block;
     }
-    nav {
+    .menu-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .site-nav {
       display: flex;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
       font-size: 0.95rem;
     }
-    nav a { color: var(--muted); }
-    nav a:hover { color: var(--text); text-decoration: none; }
+    .site-nav a { color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--text); }
+    .nav-item { position: relative; }
+    .nav-row { display: inline-flex; align-items: center; gap: 4px; }
+    .sub-toggle {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .sub-toggle:hover,
+    .nav-item:hover .sub-toggle { color: var(--text); }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 170px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 30;
+    }
+    .sub-menu li a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .sub-menu li a:hover {
+      background: var(--surface-2);
+      color: var(--gold);
+      text-decoration: none;
+    }
+    @media (hover: hover) and (min-width: 769px) {
+      .nav-item:hover .sub-menu { display: block; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: inline-block; }
+      #site-nav { width: 100%; }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .site-nav.open { display: flex; }
+      .site-nav > a,
+      .nav-row { padding: 8px 4px; }
+      .nav-row { justify-content: space-between; }
+      .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        margin-left: 10px;
+        padding: 4px 0 4px 10px;
+        background: transparent;
+      }
+      .nav-item.open .sub-menu { display: block; }
+    }
+
     main {
       max-width: 920px;
       margin: 0 auto;
@@ -181,23 +263,11 @@
       <a class="brand" href="/">
         <img class="brand-logo" src="/playlogtw-logo.png" alt="玩局誌 PlayLogTW Logo" />
       </a>
-      <nav class="site-nav" aria-label="主導覽列">
-  <a href="/risk-management/ev-and-bankroll.html">資金與風控</a>
 
-  <div class="nav-item has-sub">
-    <div class="nav-row">
-      <a href="/game/">遊戲教學</a>
-      <button class="sub-toggle" type="button" aria-label="展開遊戲教學子選單" aria-expanded="false">▾</button>
-    </div>
-    <ul class="sub-menu">
-      <li><a href="/game/baccarat/baccarat-rules.html">百家樂規則</a></li>
-    </ul>
-  </div>
+      <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">☰</button>
 
-  <a href="#featured">精選實測與工具</a>
-  <a href="#topics">內容專區</a>
-  <a href="/sitemap.xml">網站地圖</a>
-</nav>
+      <!-- 共用選單容器（由根目錄 /nav.js 自動填入） -->
+      <div id="site-nav"></div>
     </div>
   </header>
 
@@ -253,5 +323,8 @@
   <footer>
     玩局誌 PlayLogTW · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
   </footer>
+
+  <!-- 呼叫根目錄的共用選單腳本 -->
+  <script src="/nav.js" defer></script>
 </body>
 </html>
