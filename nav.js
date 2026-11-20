@@ -42,6 +42,17 @@
 
     container.innerHTML = `<nav class="site-nav" aria-label="主導覽列">${html}</nav>`;
 
+    // 手機版漢堡選單開合
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteNav = container.querySelector(".site-nav");
+    if (menuToggle && siteNav) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = siteNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    // 子選單開合
     const subToggle = container.querySelector(".sub-toggle");
     const navItem = container.querySelector(".nav-item.has-sub");
     if (subToggle && navItem) {
