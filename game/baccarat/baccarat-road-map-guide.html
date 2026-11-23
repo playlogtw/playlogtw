@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>百家樂牌路怎麼看？五種路單圖解＋12 局實例教學｜PlayLogTW 玩局誌</title>
+  <meta name="description" content="百家樂牌路是把莊、閒、和的歷史結果畫成圖表。本文用同一組 12 局資料，教你畫出珠盤路、大路、大眼仔、小路、曱甴路，看懂問路與下三路紅藍規則，並說明牌路為什麼不能預測下一局。" />
+  <link rel="canonical" href="https://playlogtw.com/game/baccarat/baccarat-road-map-guide.html" />
+
+  <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
+  <link rel="shortcut icon" href="/playlogtw-favicon.png" />
+  <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <meta property="og:site_name" content="玩局誌 PlayLogTW" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="百家樂牌路怎麼看？五種路單圖解＋12 局實例教學｜PlayLogTW 玩局誌" />
+  <meta property="og:description" content="用同一組 12 局資料，教你畫出珠盤路、大路與下三路，看懂問路與紅藍規則，並拆解牌路為什麼不能預測下一局。" />
+  <meta property="og:url" content="https://playlogtw.com/game/baccarat/baccarat-road-map-guide.html" />
+  <meta property="og:image" content="https://playlogtw.com/images/baccarat/road-map/fig1_overview.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "百家樂牌路怎麼看？五種路單圖解＋12 局實例教學",
+    "description": "百家樂牌路是把莊、閒、和的歷史結果畫成圖表。本文用同一組 12 局資料，教你畫出珠盤路、大路、大眼仔、小路、曱甴路，看懂問路與下三路紅藍規則，並說明牌路為什麼不能預測下一局。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-11-23",
+    "dateModified": "2026-11-23",
+    "author": { "@type": "Organization", "name": "玩局誌 PlayLogTW" },
+    "publisher": { "@type": "Organization", "name": "玩局誌 PlayLogTW" },
+    "mainEntityOfPage": "https://playlogtw.com/game/baccarat/baccarat-road-map-guide.html"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #162033;
+      --surface-2: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f59e0b;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .site-nav a:hover {
+      color: var(--text);
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .sub-toggle {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .sub-toggle:hover,
+    .nav-item:hover .sub-toggle {
+      color: var(--text);
+    }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 170px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 30;
+    }
+    .sub-menu li a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .sub-menu li a:hover {
+      background: var(--surface-2);
+      color: var(--gold);
+      text-decoration: none;
+    }
+    @media (hover: hover) and (min-width: 769px) {
+      .nav-item:hover .sub-menu {
+        display: block;
+      }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: inline-block;
+      }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .site-nav.open {
+        display: flex;
+      }
+      .site-nav > a,
+      .nav-row {
+        padding: 8px 4px;
+      }
+      .nav-row {
+        justify-content: space-between;
+      }
+      .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        margin-left: 10px;
+        padding: 4px 0 4px 10px;
+        background: transparent;
+      }
+      .nav-item.open .sub-menu {
+        display: block;
+      }
+    }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 36px 20px 72px;
+    }
+    .breadcrumb {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      line-height: 1.28;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.38rem;
+      margin: 40px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 1.14rem;
+      margin: 26px 0 10px;
+      color: var(--text);
+    }
+    p {
+      margin: 0 0 16px;
+    }
+    ul, ol {
+      margin: 0 0 18px;
+      padding-left: 22px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .callout {
+      background: var(--surface);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 20px 0;
+    }
+    .callout p:last-child,
+    .callout ul:last-child {
+      margin-bottom: 0;
+    }
+    .sample-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    figure {
+      margin: 22px 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 520px;
+    }
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--text);
+      font-weight: 700;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .related-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 32px;
+    }
+    .related-box h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/playlogtw-logo.png" alt="玩局誌 PlayLogTW Logo" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">
+        ☰
+      </button>
+
+      <div id="site-nav"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">首頁</a> / <a href="/game/">遊戲教學總覽</a> / 百家樂牌路教學
+    </div>
+
+    <span class="tag">百家樂 · 路單圖解</span>
+    <h1>百家樂牌路怎麼看？五種路單圖解＋12 局實例教學</h1>
+    <div class="meta">作者：玩局誌 PlayLogTW · 更新日期：2026-11-23</div>
+
+    <p>路單上那一排排紅藍圈圈，到底在說什麼？簡單講：百家樂牌路，就是把每一局莊、閒、和的結果，依固定規則畫成的圖表，常見有珠盤路、大路、大眼仔、小路、曱甴路五種。它能讓你一眼看懂這靴牌發生過什麼，但不能保證下一局會開什麼。</p>
+
+    <p>多數新手卡關，不是因為看不懂顏色，而是不知道圖背後的規則。尤其是大眼仔、小路、曱甴路的紅藍，很多人看了半天還是會錯意。</p>
+
+    <p>這篇文章用同一組 12 局資料，帶你從頭親手畫出五種路單，連下三路的紅藍都能自己算出來。最後也會聊聊多數文章沒說透的事：為什麼長龍、問路看起來很有道理，卻不能當成預測依據。讀完之後，你看路單就不再只是在看顏色猜運氣。</p>
+
+    <div class="callout">
+      <p><strong>如果你是新手，先記住三件事：</strong></p>
+      <ul>
+        <li>前兩種（珠盤路、大路）記錄的是「誰贏了」。</li>
+        <li>後三種（大眼仔、小路、曱甴路，合稱「下三路」）記錄的是「大路的走勢有沒有規律」，紅藍不代表莊閒。</li>
+        <li>牌路是「整理過去」的工具，不是「預告未來」的工具。</li>
+      </ul>
+    </div>
+
+    <p>手邊有紙筆的話，邊看邊畫會更有感覺。</p>
+
+    <h2>百家樂牌路是什麼？先認識路單的基本概念</h2>
+
+    <h3>牌路與路單有什麼不同？</h3>
+    <p>大家平常會把「牌路」和「路單」混著講，不過兩個詞有點不一樣：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>名稱</th>
+            <th>指的是什麼</th>
+            <th>例子</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>路單</td>
+            <td>實際畫出來的圖表或紀錄表</td>
+            <td>珠盤路、大路等每一張圖</td>
+          </tr>
+          <tr>
+            <td>牌路</td>
+            <td>整體概念，也包含從路單看出的「走勢」</td>
+            <td>「現在牌路很長」、「這靴牌路很跳」</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>這篇文章裡，「路單」就是圖表本身，「牌路」是整套記路、看路的方法。你在網路上還會看到「路子」、「看路」、「記路」，講的大致都是同一件事。</p>
+
+    <h3>為什麼真人百家樂會顯示牌路？</h3>
+    <p>真人百家樂的畫面通常直接幫你放好路單，原因不複雜：</p>
+    <ol>
+      <li><strong>方便回顧</strong>：一靴牌可能打幾十局，靠記憶很容易漏掉，路單就是自動幫你做紀錄。</li>
+      <li><strong>統一語言</strong>：玩家之間用「長龍」、「單跳」這些詞交流時，大家看的是同一種圖。</li>
+      <li><strong>介面慣例</strong>：路單幾乎是百家樂桌台的標準配備（想先熟悉牌桌區域與每局流程，可參考<a href="/game/baccarat/baccarat-how-to-play.html">百家樂怎麼玩圖解流程</a>），平台放上去，是讓玩家隨時查得到過去的結果。</li>
+    </ol>
+    <p>平台顯示路單，不代表路單能預測。它只是把已經發生的結果整理成圖。</p>
+
+    <h3>莊、閒、和的顏色代表什麼？</h3>
+    <p>多數平台是這樣配色的：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>結果</th>
+            <th>常見顏色與符號</th>
+            <th>備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>莊</td>
+            <td>紅色</td>
+            <td>大路為紅色圈</td>
+          </tr>
+          <tr>
+            <td>閒</td>
+            <td>藍色</td>
+            <td>大路為藍色圈</td>
+          </tr>
+          <tr>
+            <td>和</td>
+            <td>綠色</td>
+            <td>珠盤路占一格；大路用綠色斜線標在前一格</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>下三路（大眼仔、小路、曱甴路）也會用紅色與藍色，但那是「走勢規律與否」的標記，不是莊與閒。</strong>這是新手最常搞混的地方，後面會一步步拆開來講。</p>
+    <p>各平台的配色和符號多少會有差異，實際以你玩的那個平台為準。</p>
+
+    <h2>百家樂五種牌路完整介紹</h2>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig1_overview.webp" alt="百家樂五種牌路辨識圖鑑：珠盤路、大路、大眼仔、小路、曱甴路對照" loading="lazy" />
+      <figcaption>百家樂五種牌路辨識圖鑑：珠盤路、大路、大眼仔、小路、曱甴路對照</figcaption>
+    </figure>
+
+    <p>先看一張總覽圖，把五種路單的長相記起來。文章裡所有圖都用同一組 12 局資料：</p>
+    <div class="sample-box">莊、閒、和、閒、閒、莊、閒、閒、莊、莊、莊、閒</div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>路單</th>
+            <th>主要記錄什麼</th>
+            <th>對照方式</th>
+            <th>和局怎麼處理</th>
+            <th>新手學習順序</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>珠盤路</td>
+            <td>每一局的結果，一局一格</td>
+            <td>無，只是依序記錄</td>
+            <td>占一格（綠色）</td>
+            <td>第 1</td>
+          </tr>
+          <tr>
+            <td>大路</td>
+            <td>莊、閒的連續與換邊</td>
+            <td>無，同結果往下排、換結果換欄</td>
+            <td>綠色斜線標在前一格</td>
+            <td>第 2</td>
+          </tr>
+          <tr>
+            <td>大眼仔</td>
+            <td>大路走勢是否整齊（紅／藍）</td>
+            <td>對照前 1 欄</td>
+            <td>不記錄</td>
+            <td>第 3</td>
+          </tr>
+          <tr>
+            <td>小路</td>
+            <td>大路走勢是否整齊（紅／藍）</td>
+            <td>對照前 2 欄</td>
+            <td>不記錄</td>
+            <td>第 4</td>
+          </tr>
+          <tr>
+            <td>曱甴路</td>
+            <td>大路走勢是否整齊（紅／藍）</td>
+            <td>對照前 3 欄</td>
+            <td>不記錄</td>
+            <td>第 5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>珠盤路怎麼看？一局一格的基本記錄</h3>
+    <p>珠盤路最直覺：每開一局，就在格子裡放一顆珠子，顏色和文字代表莊、閒、和。由上往下填，通常一欄 6 格，滿了就換下一欄。</p>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig2_pearl.webp" alt="珠盤路：12 局原始紀錄，每局一格、由上往下、滿 6 列換欄" loading="lazy" />
+      <figcaption>珠盤路：12 局原始紀錄，每局一格、由上往下、滿 6 列換欄</figcaption>
+    </figure>
+
+    <p>看圖：第 1 欄是前 6 局（莊、閒、和、閒、閒、莊），第 2 欄是後 6 局（閒、閒、莊、莊、莊、閒）。和局也占一格，這是它跟大路最大的不同。</p>
+    <p>珠盤路的好處是完整、不會漏局；缺點是看不出「連續」的感覺，所以才需要大路。</p>
+
+    <h3>大路怎麼看？連莊、連閒及換欄規則</h3>
+    <p>大路是所有衍生路單的地基，規則只有兩條：</p>
+    <ol>
+      <li>同一邊連續開：往下排在同一欄。</li>
+      <li>換成另一邊：換到下一欄的第 1 列。</li>
+    </ol>
+    <p>和局不另外占格，用綠色斜線標在前一格就好。</p>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig3_big.webp" alt="大路：同結果往下排、換結果就換欄，和局用綠色斜線標在前一格" loading="lazy" />
+      <figcaption>大路：同結果往下排、換結果就換欄，和局用綠色斜線標在前一格</figcaption>
+    </figure>
+
+    <p>拿我們的 12 局來畫：第 1 局莊，放第 1 欄；第 2 局閒，換到第 2 欄；第 3 局和，斜線標在第 2 欄第 1 格；第 4、5 局閒，繼續往下排，第 2 欄就有 3 格。最後整張大路是 6 欄：莊 ／ 閒閒閒 ／ 莊 ／ 閒閒 ／ 莊莊莊 ／ 閒。</p>
+    <p>一欄連續幾格，就代表該邊連開幾局，「連莊」、「連閒」就是這麼來的。</p>
+
+    <h3>大眼仔怎麼看？紅藍代表什麼？</h3>
+    <p>大眼仔是下三路的第一條，用空心圈表示。它不記莊閒，而是拿大路「這一格」跟「前面 1 欄」比一比：</p>
+    <ul>
+      <li><strong>紅色</strong>：走勢和對照欄「有跟上」（整齊、有規律）。</li>
+      <li><strong>藍色</strong>：走勢和對照欄「沒跟上」（參差、不規律）。</li>
+    </ul>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig4_bigeye.webp" alt="大眼仔：與前 1 欄比較的紅藍空心圈" loading="lazy" />
+      <figcaption>大眼仔：與前 1 欄比較的紅藍空心圈</figcaption>
+    </figure>
+
+    <p>所以大眼仔出現紅色，不是莊，也不是在暗示下一局會開莊，只是代表這一格大路的形狀，跟前一欄「對得上」。</p>
+
+    <h3>小路怎麼看？與大眼仔有什麼不同？</h3>
+    <p>小路的規則跟大眼仔一模一樣，只是比較的欄位更遠：大眼仔看前 1 欄，小路看前 2 欄。它用實心點表示。</p>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig5_small.webp" alt="小路：與前 2 欄比較的紅藍實心點" loading="lazy" />
+      <figcaption>小路：與前 2 欄比較的紅藍實心點</figcaption>
+    </figure>
+
+    <p>因為對照的欄位不同，同一格大路可能在大眼仔是紅、在小路卻是藍。這不是畫錯，只是兩條路比的對象不一樣。另外小路要多一欄的資料才能開始畫，所以起點比大眼仔晚。</p>
+
+    <h3>曱甴路怎麼看？蟑螂路的判讀方式</h3>
+    <p>曱甴路（讀作「甲由」，也叫蟑螂路）是第三條下三路，看前 3 欄，用斜線表示。規則一樣：紅＝跟上、藍＝沒跟上。</p>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig6_cockroach.webp" alt="曱甴路：與前 3 欄比較的紅藍斜線" loading="lazy" />
+      <figcaption>曱甴路：與前 3 欄比較的紅藍斜線</figcaption>
+    </figure>
+
+    <p>曱甴路起點最晚、格數最少。新手可以先搞懂前四種，最後再來啃這一條。</p>
+
+    <h2>百家樂大路與下三路的計算方法</h2>
+    <p>這一章要解的，是新手最容易卡關的問題：下三路的紅藍到底怎麼算？先記住一個總原則：</p>
+    <p>大路每多一格，下三路就「可能」多一格；多出來的那一格是紅還是藍，要看大路這一格與「前面對應的欄位」比起來整不整齊。</p>
+
+    <h3>大路如何決定新欄與延伸位置？</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>情況</th>
+            <th>怎麼畫</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>第一個非和局結果</td>
+            <td>放在第 1 欄第 1 列</td>
+          </tr>
+          <tr>
+            <td>與上一格相同</td>
+            <td>同欄往下一格</td>
+          </tr>
+          <tr>
+            <td>與上一格不同</td>
+            <td>換到下一欄的第 1 列</td>
+          </tr>
+          <tr>
+            <td>開和局</td>
+            <td>不占新格，綠色斜線標在前一格</td>
+          </tr>
+          <tr>
+            <td>開局先出現和局（還沒有任何莊閒）</td>
+            <td>先暫記，等第一個莊或閒出現時標在它上面</td>
+          </tr>
+          <tr>
+            <td>同欄超過 6 格</td>
+            <td>多數平台會向右轉彎（龍尾拐彎）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>龍尾拐彎只是畫面上的處理，算下三路時，那一欄還是要當成「同一欄」，用它的實際長度來算。這是新手最常算錯的地方之一。</p>
+
+    <h3>大眼仔的起始位置與計算方式</h3>
+    <p>大眼仔有兩種格子要判斷，規則不太一樣：</p>
+    <p><strong>情況一：大路在「新欄第 1 列」（剛換邊）</strong><br />
+    比較「前一欄的長度」和「再前一欄的長度」：</p>
+    <ul>
+      <li>長度相同 → 紅</li>
+      <li>長度不同 → 藍</li>
+    </ul>
+
+    <p><strong>情況二：大路在「同欄往下」（第 2 列以後）</strong><br />
+    看「前 1 欄」的同一列：</p>
+    <ul>
+      <li>該位置有記號 → 紅</li>
+      <li>該位置沒有記號，但上一列有 → 藍</li>
+      <li>該位置沒有記號，上一列也沒有（已超過那一欄的長度，稱為「直落」） → 紅</li>
+    </ul>
+
+    <p><strong>起始位置：</strong>大眼仔要先有「前 1 欄」才比得起來，所以從第 2 欄第 2 列，或第 3 欄第 1 列開始（看哪個先出現）。</p>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig7_derive.webp" alt="大眼仔判斷實例：第 5 欄第 2 列對照第 4 欄得紅；第 4 欄第 2 列對照第 3 欄得藍" loading="lazy" />
+      <figcaption>大眼仔判斷實例：第 5 欄第 2 列對照第 4 欄得紅；第 4 欄第 2 列對照第 3 欄得藍</figcaption>
+    </figure>
+
+    <p>看圖裡的兩個例子（橘框是正在判斷的格子，綠框是對照位置）：</p>
+    <ul>
+      <li>例 A：第 5 欄第 2 列，對照第 4 欄第 2 列。那裡有記號 → 紅。</li>
+      <li>例 B：第 4 欄第 2 列，對照第 3 欄第 2 列。第 3 欄只有 1 格，所以該位置空白，但上一列有 → 藍。</li>
+    </ul>
+
+    <h3>小路與曱甴路的對照欄位</h3>
+    <p>小路與曱甴路使用同一套規則，只是把「前 1 欄」換成「前 2 欄」或「前 3 欄」：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>大眼仔</th>
+            <th>小路</th>
+            <th>曱甴路</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>符號</td>
+            <td>空心圈</td>
+            <td>實心點</td>
+            <td>斜線</td>
+          </tr>
+          <tr>
+            <td>新欄第 1 列時，比較哪兩欄</td>
+            <td>前 1 欄 vs 前 2 欄</td>
+            <td>前 1 欄 vs 前 3 欄</td>
+            <td>前 1 欄 vs 前 4 欄</td>
+          </tr>
+          <tr>
+            <td>同欄往下時，對照哪一欄</td>
+            <td>前 1 欄</td>
+            <td>前 2 欄</td>
+            <td>前 3 欄</td>
+          </tr>
+          <tr>
+            <td>起始位置</td>
+            <td>第 2 欄第 2 列，或第 3 欄第 1 列</td>
+            <td>第 3 欄第 2 列，或第 4 欄第 1 列</td>
+            <td>第 4 欄第 2 列，或第 5 欄第 1 列</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>為什麼三條路的起始位置不同？</strong>因為對照的欄位越遠，需要的歷史資料就越多：大眼仔要有前 1 欄、小路要有前 2 欄、曱甴路要有前 3 欄，才有東西可比。</p>
+
+    <h3>下三路紅色與藍色的判斷邏輯</h3>
+    <p>把上面的規則翻成白話，會比較好記：</p>
+    <ul>
+      <li><strong>紅色 ＝ 對得上</strong>：形狀和對照欄一樣整齊（欄長相同，或對應位置有記號、或已經「直落」超過對照欄）。</li>
+      <li><strong>藍色 ＝ 對不上</strong>：形狀和對照欄不一樣（欄長不同，或對應位置剛好差一格而沒有記號）。</li>
+    </ul>
+
+    <p>實際操作時，大路每多一格，你只要問自己三個問題：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>步驟</th>
+            <th>大路這一格是…</th>
+            <th>對照方式</th>
+            <th>下三路結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>剛換邊，新欄第 1 列</td>
+            <td>比較「前 1 欄」與「前 1＋k 欄」的長度（k＝1、2、3）</td>
+            <td>長度相同＝紅；不同＝藍</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>同欄往下，第 2 列以後</td>
+            <td>看「前 k 欄」同一列有沒有記號</td>
+            <td>有＝紅；沒有但上一列有＝藍</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>同欄再往下，已超過對照欄長度</td>
+            <td>對照欄在該列和上一列都沒有記號</td>
+            <td>紅（直落）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>所以同一格大路，三條下三路才可能是不同顏色：它們比的是不同的對照欄。</p>
+
+    <h2>用 12 局實際結果示範百家樂看路</h2>
+    <p>我們用同一組資料，從頭畫到尾。拿出紙筆，邊看邊驗算。</p>
+
+    <h3>第一步：建立莊閒和原始紀錄</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>局序</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>結果</strong></td>
+            <td>莊</td>
+            <td>閒</td>
+            <td>和</td>
+            <td>閒</td>
+            <td>閒</td>
+            <td>莊</td>
+            <td>閒</td>
+            <td>閒</td>
+            <td>莊</td>
+            <td>莊</td>
+            <td>莊</td>
+            <td>閒</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>統計：莊 5 局、閒 6 局、和 1 局，共 12 局。</p>
+
+    <h3>第二步：繪製珠盤路</h3>
+    <p>每局一格，由上往下，滿 6 格換欄：</p>
+    <ul>
+      <li>第 1 欄（第 1～6 局）：莊、閒、和、閒、閒、莊</li>
+      <li>第 2 欄（第 7～12 局）：閒、閒、莊、莊、莊、閒</li>
+    </ul>
+    <p>珠盤路共 12 格，和局也算一格。（對照上方圖 2）</p>
+
+    <h3>第三步：將結果轉換成大路</h3>
+    <p>先不管和局，只看莊與閒，然後依「同邊往下、換邊換欄」排列：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>欄</th>
+            <th>內容</th>
+            <th>說明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>第 1 欄</td>
+            <td>莊（1 格）</td>
+            <td>第 1 局</td>
+          </tr>
+          <tr>
+            <td>第 2 欄</td>
+            <td>閒閒閒（3 格）</td>
+            <td>第 2、4、5 局；第 3 局的和局以斜線標在第 1 格，不會讓這一欄中斷</td>
+          </tr>
+          <tr>
+            <td>第 3 欄</td>
+            <td>莊（1 格）</td>
+            <td>第 6 局</td>
+          </tr>
+          <tr>
+            <td>第 4 欄</td>
+            <td>閒閒（2 格）</td>
+            <td>第 7、8 局</td>
+          </tr>
+          <tr>
+            <td>第 5 欄</td>
+            <td>莊莊莊（3 格）</td>
+            <td>第 9、10、11 局</td>
+          </tr>
+          <tr>
+            <td>第 6 欄</td>
+            <td>閒（1 格）</td>
+            <td>第 12 局</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>欄長依序是 1、3、1、2、3、1。這串數字是推導下三路時的重要依據。（對照上方圖 3）</p>
+
+    <h3>第四步：推導大眼仔、小路及曱甴路</h3>
+    <p>接下來把大路的每一格依序檢查：看它能不能產生下三路的記號，再判斷是紅還是藍。</p>
+
+    <p><strong>大眼仔（對照前 1 欄），共 9 格：</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>步驟</th>
+            <th>大路位置</th>
+            <th>對照方式</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>第 2 欄第 2 列</td><td>對照第 1 欄第 2 列：沒有記號，但上一格有</td><td>藍</td></tr>
+          <tr><td>2</td><td>第 2 欄第 3 列</td><td>對照第 1 欄第 3 列：沒有記號，上一格也沒有（直落）</td><td>紅</td></tr>
+          <tr><td>3</td><td>第 3 欄第 1 列</td><td>新欄：比較第 2 欄（3 格）與第 1 欄（1 格），不同</td><td>藍</td></tr>
+          <tr><td>4</td><td>第 4 欄第 1 列</td><td>新欄：比較第 3 欄（1 格）與第 2 欄（3 格），不同</td><td>藍</td></tr>
+          <tr><td>5</td><td>第 4 欄第 2 列</td><td>對照第 3 欄第 2 列：沒有記號，但上一格有</td><td>藍</td></tr>
+          <tr><td>6</td><td>第 5 欄第 1 列</td><td>新欄：比較第 4 欄（2 格）與第 3 欄（1 格），不同</td><td>藍</td></tr>
+          <tr><td>7</td><td>第 5 欄第 2 列</td><td>對照第 4 欄第 2 列：有記號</td><td>紅</td></tr>
+          <tr><td>8</td><td>第 5 欄第 3 列</td><td>對照第 4 欄第 3 列：沒有記號，但上一格有</td><td>藍</td></tr>
+          <tr><td>9</td><td>第 6 欄第 1 列</td><td>新欄：比較第 5 欄（3 格）與第 4 欄（2 格），不同</td><td>藍</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>結果序列：藍、紅、藍、藍、藍、藍、紅、藍、藍。同色往下排、換色換欄，所以畫出來是：藍／紅／藍藍藍藍／紅／藍藍（共 5 欄）。（對照上方圖 4）</p>
+
+    <p><strong>小路（對照前 2 欄），共 6 格：</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>步驟</th>
+            <th>大路位置</th>
+            <th>對照方式</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>第 4 欄第 1 列</td><td>新欄：比較第 3 欄（1 格）與第 1 欄（1 格），相同</td><td>紅</td></tr>
+          <tr><td>2</td><td>第 4 欄第 2 列</td><td>對照第 2 欄第 2 列：有記號</td><td>紅</td></tr>
+          <tr><td>3</td><td>第 5 欄第 1 列</td><td>新欄：比較第 4 欄（2 格）與第 2 欄（3 格），不同</td><td>藍</td></tr>
+          <tr><td>4</td><td>第 5 欄第 2 列</td><td>對照第 3 欄第 2 列：沒有記號，但上一格有</td><td>藍</td></tr>
+          <tr><td>5</td><td>第 5 欄第 3 列</td><td>對照第 3 欄第 3 列：沒有記號，上一格也沒有（直落）</td><td>紅</td></tr>
+          <tr><td>6</td><td>第 6 欄第 1 列</td><td>新欄：比較第 5 欄（3 格）與第 3 欄（1 格），不同</td><td>藍</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>結果序列：紅、紅、藍、藍、紅、藍，畫成：紅紅／藍藍／紅／藍（共 4 欄）。（對照上方圖 5）</p>
+
+    <p><strong>曱甴路（對照前 3 欄），共 5 格：</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>步驟</th>
+            <th>大路位置</th>
+            <th>對照方式</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>第 4 欄第 2 列</td><td>對照第 1 欄第 2 列：沒有記號，但上一格有</td><td>藍</td></tr>
+          <tr><td>2</td><td>第 5 欄第 1 列</td><td>新欄：比較第 4 欄（2 格）與第 1 欄（1 格），不同</td><td>藍</td></tr>
+          <tr><td>3</td><td>第 5 欄第 2 列</td><td>對照第 2 欄第 2 列：有記號</td><td>紅</td></tr>
+          <tr><td>4</td><td>第 5 欄第 3 列</td><td>對照第 2 欄第 3 列：有記號</td><td>紅</td></tr>
+          <tr><td>5</td><td>第 6 欄第 1 列</td><td>新欄：比較第 5 欄（3 格）與第 2 欄（3 格），相同</td><td>紅</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>結果序列：藍、藍、紅、紅、紅，畫成：藍藍／紅紅紅（共 2 欄）。（對照上方圖 6）</p>
+    <p>注意第 1 步為什麼從「第 4 欄第 2 列」開始：曱甴路要有前 3 欄才比得起來，第 4 欄第 1 列的資料還不夠。</p>
+
+    <h3>第五步：核對結果是否正確</h3>
+    <p>畫完後，用這份清單驗算一下：</p>
+    <ul>
+      <li>珠盤路格數 ＝ 總局數：12 格 ✔</li>
+      <li>大路格數 ＋ 和局數 ＝ 總局數：11 ＋ 1 ＝ 12 ✔</li>
+      <li>大路莊、閒格數 ＝ 莊、閒局數：莊 5、閒 6 ✔</li>
+      <li>下三路格數 ＝ 大路格數 − 前 k 欄的格數合計 − 1（k 為對照欄數 1、2、3）：
+        <ul>
+          <li>大眼仔：11 − 1 − 1 ＝ 9 ✔</li>
+          <li>小路：11 − (1＋3) − 1 ＝ 6 ✔</li>
+          <li>曱甴路：11 − (1＋3＋1) − 1 ＝ 5 ✔</li>
+        </ul>
+      </li>
+      <li>起點位置：大眼仔從第 2 欄第 2 列開始、小路從第 4 欄第 1 列開始、曱甴路從第 4 欄第 2 列開始，都符合規則 ✔</li>
+    </ul>
+    <p>如果格數對不上，最常見的原因有三個：把和局當成一格、龍尾拐彎時算錯欄長、起點位置抓錯。</p>
+
+    <h2>百家樂常見路型有哪些？長龍、單跳、雙跳</h2>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig8_patterns.webp" alt="常見路型示意：長龍、單跳、雙跳、一房兩廳" loading="lazy" />
+      <figcaption>常見路型示意：長龍、單跳、雙跳、一房兩廳</figcaption>
+    </figure>
+
+    <p>路型是玩家用來「描述大路形狀」的口語稱呼。它們描述的是已經發生的圖案，不是接下來會發生的事。各平台和玩家的定義略有出入，下面是比較常見的理解。</p>
+
+    <h3>長龍是什麼？</h3>
+    <p>同一邊連續開很多局，在大路上排成一長欄，就是長龍。連開幾局才算「長」，沒有統一標準，多數玩家從 4～5 局起算，也有人以 6 局（剛好填滿一欄）為準。</p>
+
+    <h3>單跳是什麼？</h3>
+    <p>莊、閒輪流出現，大路上每一欄都只有 1 格，看起來像一排橫向的記號，所以也叫「一跳」。</p>
+
+    <h3>雙跳是什麼？</h3>
+    <p>莊、閒各連開 2 局就換邊，大路上每一欄都是 2 格，整體像 2×N 的方塊排列。</p>
+
+    <h3>一房兩廳、一房三廳是什麼？</h3>
+    <p>這兩個是玩家的俗稱，說法不太統一。本文的定義是：只有 1 格的欄叫房，有 2 格的欄叫廳，所以：</p>
+    <ul>
+      <li>一房兩廳：1 格欄 ＋ 兩個 2 格欄（欄長 1、2、2 的循環）。</li>
+      <li>一房三廳：1 格欄 ＋ 三個 2 格欄（欄長 1、2、2、2 的循環）。</li>
+    </ul>
+    <p>如果你在別的平台或文章看到不同說法，不一定是誰錯了，只是定義不同。這些名稱只是幫你描述圖案，不代表圖案「接下來一定繼續」。</p>
+
+    <h2>百家樂問路是什麼？莊問路與閒問路解析</h2>
+
+    <h3>問路功能的用途</h3>
+    <p>問路是不少真人百家樂介面有的功能。它的做法是：假設下一局開莊（或開閒），大路會多一格，那下三路會多出什麼顏色？先把這個「如果」的結果畫給你看。</p>
+    <p>所以問路本質上是個預覽功能，幫你省下手算的時間，不是在判斷哪一邊會贏。</p>
+
+    <h3>莊問路怎麼看？</h3>
+    <p>接著用 12 局的範例來看。假設第 13 局開莊，大路會在第 7 欄第 1 列多一個莊（新欄第 1 列）：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>下三路</th>
+            <th>判斷過程</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>大眼仔</td>
+            <td>比較第 6 欄（1 格）與第 5 欄（3 格），不同</td>
+            <td>藍</td>
+          </tr>
+          <tr>
+            <td>小路</td>
+            <td>比較第 6 欄（1 格）與第 4 欄（2 格），不同</td>
+            <td>藍</td>
+          </tr>
+          <tr>
+            <td>曱甴路</td>
+            <td>比較第 6 欄（1 格）與第 3 欄（1 格），相同</td>
+            <td>紅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>所以「莊問路」會顯示：藍、藍、紅。</p>
+
+    <h3>閒問路怎麼看？</h3>
+    <p>假設第 13 局開閒，大路的第 6 欄會從 1 格變成 2 格（同欄往下，第 2 列）：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>下三路</th>
+            <th>判斷過程</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>大眼仔</td>
+            <td>對照第 5 欄第 2 列：有記號</td>
+            <td>紅</td>
+          </tr>
+          <tr>
+            <td>小路</td>
+            <td>對照第 4 欄第 2 列：有記號</td>
+            <td>紅</td>
+          </tr>
+          <tr>
+            <td>曱甴路</td>
+            <td>對照第 3 欄第 2 列：沒有記號，但上一格有</td>
+            <td>藍</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>所以「閒問路」會顯示：紅、紅、藍。</p>
+
+    <figure>
+      <img src="/images/baccarat/road-map/fig9_ask.webp" alt="問路示意：假設下一局開莊或開閒，三條下三路各會多畫什麼顏色" loading="lazy" />
+      <figcaption>問路示意：假設下一局開莊或開閒，三條下三路各會多畫什麼顏色</figcaption>
+    </figure>
+
+    <p>各平台呈現問路的方式不太一樣，有的用小圖示，有的只顯示顏色，邏輯是一樣的。</p>
+
+    <h3>問路的紅藍提示能代表勝率嗎？</h3>
+    <p>不能。問路的紅藍只是在回答：「如果下一局開某邊，圖案會變得整齊還是參差？」它完全沒有在算「某邊開出的機率」。</p>
+    <p>就算問路顯示全紅，也不代表那一邊比較容易開；顯示全藍，也不代表不會開。下一局開什麼，是牌面決定的，不是圖案決定的。</p>
+
+    <h2>百家樂牌路能預測下一局嗎？破解常見迷思</h2>
+    <p>答案是：不能。不過「為什麼不能」更值得聊，因為網路上常見的說法（「每局都是獨立事件，前後完全無關」）講得太簡化，不夠精確。</p>
+    <p>先看單局的理論機率（8 副牌、標準規則；更完整的算點、補牌表與賭場優勢計算可看<a href="/game/baccarat/baccarat-rules.html">百家樂規則與莊家優勢解析</a>）：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>結果</th>
+            <th>理論機率（約）</th>
+            <th>賭場優勢（約）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>莊</td>
+            <td>45.86%</td>
+            <td>1.06%（已計入 5% 抽水）</td>
+          </tr>
+          <tr>
+            <td>閒</td>
+            <td>44.62%</td>
+            <td>1.24%</td>
+          </tr>
+          <tr>
+            <td>和</td>
+            <td>9.52%</td>
+            <td>約 14.4%（賠率 8 倍時）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>也就是說，不管你看哪一種路單，長期下來，每一種下注都對玩家不利。牌路改變不了這件事。</p>
+
+    <h3>連續開莊後是否更容易開閒？</h3>
+    <p>很多人會想：「莊開太多了，該換閒了吧？」但在一般獨立試驗的模型下，前面開了什麼，並不會讓下一局的機率「補償」回來。連開 5 次莊後，下一局開莊的機率，還是跟平常差不多。</p>
+
+    <h3>長龍出現代表會繼續嗎？</h3>
+    <p>也不代表。用個簡化的模擬幫你建立感覺：假設一靴牌有 70 個非和局的結果，莊、閒各佔一半左右。</p>
+    <ul>
+      <li>出現至少一條 5 連的機率約 9 成</li>
+      <li>出現至少一條 6 連的機率約 7 成</li>
+      <li>出現至少一條 7 連的機率約 4 成</li>
+    </ul>
+    <p>（這是簡化模型的估算，非任何平台的實測數據。）</p>
+    <p>所以長龍本來就是隨機序列裡很常見的現象。看到長龍，不代表它「一定會繼續」，也不代表它「快斷了」。</p>
+
+    <h3>下三路是否比大路更準？</h3>
+    <p>不會。下三路是從大路推導出來的，沒有多任何牌局資訊，只是換個方式呈現大路的形狀。同一份資料重新整理，不會憑空多出預測能力。</p>
+
+    <h3>賭徒謬誤與有限牌組的差異</h3>
+    <p>這段很多文章都沒講清楚，我們慢慢拆。</p>
+    <p>賭徒謬誤，是相信「某件事已經連續發生很多次，接下來就更可能相反」。在一般獨立試驗（例如擲公平硬幣）裡，這個想法是錯的。</p>
+    <p>但百家樂跟擲硬幣有個差別：它用的是有限的牌組。一靴牌通常有 8 副牌（416 張），發出去的牌不會放回。所以嚴格來說，同一靴裡前後局並非「完全」獨立，已經出過的牌，會讓剩下的牌組成略有不同。</p>
+    <p>那路單是不是就有用了？還是沒有，原因有幾個：</p>
+    <ol>
+      <li><strong>路單只記結果，不記牌張</strong>。莊、閒、和三個字，沒有保留「哪些牌已經出現」。</li>
+      <li><strong>同一種路型，可能對應完全不同的剩餘牌組</strong>。兩靴牌畫出一樣的大路，剩下的牌可能差很多。</li>
+      <li><strong>每局只消耗約 4～6 張牌，單局對 416 張的影響很小</strong>。要把這種微小變化量化，需要的是逐張的牌面紀錄，不是路單圖形。</li>
+      <li><strong>平台的洗牌方式不一定相同</strong>。部分真人桌可能使用連續洗牌機或更頻繁的洗牌，這時連「同一靴牌」的前提都不成立。</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>比較精確的說法是：</strong><br />
+      單靴有限牌組使前後局在數學上並非完全獨立，但路單沒有記錄足夠的剩餘牌面資訊，因此無法從路單的圖形，推論下一局的機率有明顯改變。</p>
+    </div>
+
+    <h2>百家樂記路工具與路單紀錄表怎麼使用？</h2>
+
+    <h3>手動記路與自動記路的差別</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>手動記路</th>
+            <th>自動記路（平台內建或工具）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>準確度</td>
+            <td>取決於你是否細心，容易漏局或看錯</td>
+            <td>通常較穩定，但仍要留意是否有誤</td>
+          </tr>
+          <tr>
+            <td>學習效果</td>
+            <td>高，會真正理解每條路的算法</td>
+            <td>低，容易只看圖不懂規則</td>
+          </tr>
+          <tr>
+            <td>速度</td>
+            <td>慢</td>
+            <td>即時</td>
+          </tr>
+          <tr>
+            <td>適合對象</td>
+            <td>新手剛開始學習時</td>
+            <td>熟悉規則後，想節省時間</td>
+          </tr>
+          <tr>
+            <td>風險</td>
+            <td>抄錯、算錯</td>
+            <td>過度依賴，誤以為圖形有預測力</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>建議：新手前幾次先自己手畫，確認真的懂規則，再用自動工具。</p>
+    <p>工具通常還會有這些功能：</p>
+    <ul>
+      <li><strong>路單重置</strong>：換靴或換桌時，要把路單歸零重新開始。</li>
+      <li><strong>歷史紀錄保存</strong>：把過去的靴次存起來，方便回顧。</li>
+      <li><strong>核對功能</strong>：比對你記的結果與系統開獎結果。</li>
+    </ul>
+    <p>記路工具只是幫你整理紀錄，不會多給你任何「真實機率」的資訊，也不能提高勝率或預測開獎。如果有工具或服務說能「精準預測」，請小心。</p>
+
+    <h3>如何檢查路單是否記錄錯誤？</h3>
+    <p>可以用這幾個方法快速核對：</p>
+    <ol>
+      <li><strong>總局數核對</strong>：珠盤路格數應等於實際局數。</li>
+      <li><strong>莊閒和計數</strong>：大路的莊格數、閒格數、和局斜線數，應和你自己的計數一致。</li>
+      <li><strong>欄長核對</strong>：每一欄的格數，應該等於該邊連開的局數。</li>
+      <li><strong>下三路格數核對</strong>：用本文第五步的公式（大路格數 − 前 k 欄格數 − 1）驗算。</li>
+      <li><strong>起點位置核對</strong>：確認三條下三路是否從正確位置開始。</li>
+      <li><strong>龍尾拐彎</strong>：欄長超過 6 時，確認你仍以「邏輯欄長」計算。</li>
+    </ol>
+
+    <h3>如何保存每靴牌的紀錄？</h3>
+    <p>每換一靴牌，路單就會重置，所以每一靴要分開記。下面是一份簡單的紀錄表欄位，可以直接複製到試算表或筆記本使用：</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>平台／桌號</th>
+            <th>靴次</th>
+            <th>局序</th>
+            <th>結果（莊／閒／和）</th>
+            <th>下注金額</th>
+            <th>當局盈虧</th>
+            <th>備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026/00/00</td>
+            <td>例：A 桌</td>
+            <td>第 1 靴</td>
+            <td>1</td>
+            <td>莊</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>保存紀錄有兩個好處：</p>
+    <ul>
+      <li>回頭檢查自己的記路有沒有錯，練習看路與畫路。</li>
+      <li>記下實際的下注與盈虧，讓你清楚看到自己花了多少，這比研究「下一局會開什麼」有用多了。</li>
+    </ul>
+
+    <h2>百家樂牌路 FAQ 常見問題</h2>
+
+    <h3>百家樂牌路有幾種？</h3>
+    <p>最常見的是五種：珠盤路、大路、大眼仔、小路、曱甴路。其中大眼仔、小路、曱甴路合稱「下三路」，都是從大路衍生出來的。有些平台還有問路等輔助功能。</p>
+
+    <h3>新手應該先學哪一種？</h3>
+    <p>先學珠盤路，再學大路，這兩種是原始紀錄，最直覺。等你能自己畫出大路，再依序學大眼仔、小路、曱甴路。</p>
+
+    <h3>珠盤路和大路有什麼不同？</h3>
+    <p>珠盤路是「一局一格」，和局也占一格，依時間順序排列。大路是「同結果往下排、換結果換欄」，和局不占格，只在前一格標上斜線，所以更能看出連莊、連閒的狀況。</p>
+
+    <h3>和局在大路怎麼顯示？</h3>
+    <p>和局不會占新的格子，而是用綠色斜線標在前一個結果上。如果一開局就連續出和，先暫記，等第一個莊或閒出現再標上去。和局也不會讓同一欄中斷。</p>
+
+    <h3>下三路的紅藍代表莊閒嗎？</h3>
+    <p>不代表。下三路的紅色表示大路走勢與對照欄「對得上」，藍色表示「對不上」。它跟哪一邊開出來完全無關。</p>
+
+    <h3>百家樂問路可以預測下一局嗎？</h3>
+    <p>不能。問路只是預覽：「如果下一局開莊（或閒），下三路會多畫什麼顏色」。它沒有計算任何一邊的勝率。</p>
+
+    <h3>百家樂牌路每一靴都會重置嗎？</h3>
+    <p>是的。每換一靴牌（或平台重新洗牌），路單通常會重置，從第 1 欄重新記。不同靴次的路單不要接在一起看。</p>
+
+    <h2>結論：看懂牌路，先理解它記錄了什麼</h2>
+    <p>百家樂牌路的功能是整理歷史紀錄：珠盤路留下每一局，大路呈現莊閒的連續與換邊，下三路再從大路的形狀衍生出另一層整理。學會之後，你看得懂平台畫面，能跟其他玩家聊同一種語言，也能自己檢查紀錄有沒有出錯。</p>
+
+    <p>但牌路不是預測工具。路單沒有記錄剩餘牌張的完整資訊，長龍、單跳只是在描述已經發生的圖案，問路的紅藍也不是勝率。加上每種下注對玩家都有賭場優勢，沒有任何圖形能保證你贏。</p>
+
+    <p>如果你決定玩，請記得：</p>
+    <ul>
+      <li>把它當作娛樂，事先決定一個「輸了也不會影響生活」的預算，並嚴格遵守（想進一步了解注碼比例與破產風險，可看<a href="/risk-management/ev-and-bankroll.html">期望值、波動率與資金控管拆解</a>）。</li>
+      <li>不要追損，也不要因為「長龍快斷了」而加碼。</li>
+      <li>設定時間與停損點，達到就離場。</li>
+      <li>留意你所在地區的法規與年齡限制，確認後再決定是否參與。</li>
+      <li>如果發現自己難以控制，請尋求專業協助或與信任的人談談。</li>
+    </ul>
+
+    <p>看懂牌路，是讓你更清楚自己在看什麼；做出理性的娛樂決定，才是最重要的一步。</p>
+
+    <div class="related-box">
+      <h3>延伸閱讀與站內導覽</h3>
+      <ul>
+        <li><a href="/game/baccarat/baccarat-rules.html">從零開始學百家樂規則：算點方式、補牌表、賠率與莊家優勢</a></li>
+        <li><a href="/game/baccarat/baccarat-how-to-play.html">百家樂怎麼玩？圖解牌桌、投注區與每局 4 步驟</a></li>
+        <li><a href="/risk-management/ev-and-bankroll.html">期望值是正的，為什麼我還是輸光了？波動率、注碼比例與破產風險拆解</a></li>
+        <li><a href="/game/">瀏覽完整遊戲教學總覽</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    玩局誌 PlayLogTW · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
+  </footer>
+
+  <script src="/nav.js" defer></script>
+</body>
+</html>
