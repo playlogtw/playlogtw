@@ -11,7 +11,13 @@
       ]
     },
     { label: "精選實測與工具", href: "/#featured" },
-    { label: "內容專區", href: "/#topics" },
+    {
+      label: "熱門話題",
+      href: "/trending/",
+      children: [
+        { label: "Ro倖存者", href: "/trending/ro-survivors/" }
+      ]
+    },
     { label: "網站地圖", href: "/sitemap.xml" }
   ];
 
@@ -52,17 +58,17 @@
       });
     }
 
-    // 子選單開合
-    const subToggle = container.querySelector(".sub-toggle");
-    const navItem = container.querySelector(".nav-item.has-sub");
-    if (subToggle && navItem) {
+    // 支援多個子選單各自開合
+    container.querySelectorAll(".nav-item.has-sub").forEach(function (navItem) {
+      const subToggle = navItem.querySelector(".sub-toggle");
+      if (!subToggle) return;
       subToggle.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
         const expanded = navItem.classList.toggle("open");
         subToggle.setAttribute("aria-expanded", String(expanded));
       });
-    }
+    });
   }
 
   if (document.readyState === "loading") {
