@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RO 倖存者怎麼玩？官方網址、職業推薦、二轉與交易規則一次看｜playlogtw-玩局誌</title>
+  <meta name="description" content="RO Survivors（RO 倖存者）完整玩法與新手指南：整理原作者網址、六大一轉與十二種二轉、關卡與裝備分數門檻、精煉與組隊規則、最新交易限制與 FAQ。" />
+  <link rel="canonical" href="https://playlogtw.com/trending/ro-survivors/how-to-play" />
+
+  <!-- Favicon 與品牌圖示 -->
+  <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
+  <link rel="shortcut icon" href="/playlogtw-favicon.png" />
+  <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <!-- Open Graph 社群預覽 -->
+  <meta property="og:site_name" content="playlogtw-玩局誌" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="RO 倖存者怎麼玩？官方網址、職業推薦、二轉與交易規則一次看｜playlogtw-玩局誌" />
+  <meta property="og:description" content="整理原作者網址、六大一轉與十二種二轉、關卡與裝備分數門檻、精煉與組隊規則、最新交易限制與 FAQ。" />
+  <meta property="og:url" content="https://playlogtw.com/trending/ro-survivors/how-to-play" />
+  <meta property="og:image" content="https://playlogtw-favicon.png" />
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #162033;
+      --surface-2: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f59e0b;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .site-nav a { color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--text); }
+    .nav-item { position: relative; }
+    .nav-row { display: inline-flex; align-items: center; gap: 4px; }
+    .sub-toggle {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .sub-toggle:hover,
+    .nav-item:hover .sub-toggle { color: var(--text); }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 170px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 30;
+    }
+    .sub-menu li a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .sub-menu li a:hover {
+      background: var(--surface-2);
+      color: var(--gold);
+      text-decoration: none;
+    }
+    @media (hover: hover) and (min-width: 769px) {
+      .nav-item:hover .sub-menu { display: block; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: inline-block; }
+      #site-nav { width: 100%; }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .site-nav.open { display: flex; }
+      .site-nav > a,
+      .nav-row { padding: 8px 4px; }
+      .nav-row { justify-content: space-between; }
+      .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        margin-left: 10px;
+        padding: 4px 0 4px 10px;
+        background: transparent;
+      }
+      .nav-item.open .sub-menu { display: block; }
+    }
+
+    main {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    .breadcrumb {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      line-height: 1.3;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0 0 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 0 28px;
+    }
+    .toc-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .toc-list {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 4px 18px;
+      font-size: 0.92rem;
+    }
+    h2 {
+      font-size: 1.32rem;
+      margin: 38px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.65);
+      color: var(--text);
+    }
+    h3 {
+      font-size: 1.08rem;
+      margin: 22px 0 8px;
+      color: var(--gold);
+    }
+    p { margin: 0 0 14px; color: #e2e8f0; }
+    ul, ol { margin: 0 0 18px; padding-left: 22px; color: #e2e8f0; }
+    li { margin-bottom: 8px; }
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 22px 0;
+    }
+    .callout strong { color: var(--gold); }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 18px 0 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 520px;
+    }
+    th, td {
+      padding: 11px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--surface-2);
+      color: var(--gold);
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: none; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .faq-a {
+      margin: 0;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+    .meta-note {
+      margin-top: 32px;
+      padding: 16px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .meta-note ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .next-box {
+      margin-top: 28px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/playlogtw-logo.png" alt="playlogtw-玩局誌 Logo" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">☰</button>
+
+      <!-- 共用選單容器（由根目錄 /nav.js 自動填入） -->
+      <div id="site-nav"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">首頁</a> / <a href="/trending/">熱門趨勢專區</a> / <a href="/trending/ro-survivors/">RO 倖存者</a> / 完整玩法與新手指南
+    </div>
+
+    <span class="tag">RO Survivors · 完整玩法總整理</span>
+    <h1>RO 倖存者怎麼玩？官方網址、職業推薦、二轉與交易規則一次看</h1>
+    <p class="lead">
+      《RO 倖存者》（RO Survivors）是 Reven4nt 做的免費網頁遊戲，把《RO 仙境傳說》的職業、魔物和場景，塞進《吸血鬼倖存者》那種自動攻擊、升級選技能的玩法裡。用電腦或手機瀏覽器就能玩，不用下載。這篇整理原作者網站、基本玩法、六個一轉職業、12 種二轉、新手練功、裝備養成與最新交易規則（資料查核至 2026 年 11 月 23 日，仍在 Beta 測試階段，實際數值與規則以遊戲內公告為準）。
+    </p>
+
+    <nav class="toc" aria-label="文章目錄">
+      <div class="toc-title">快速跳轉章節</div>
+      <ul class="toc-list">
+        <li><a href="#diff">一、它跟官方 RO 差在哪？</a></li>
+        <li><a href="#loop">二、一局怎麼打與長期養成</a></li>
+        <li><a href="#tw-boom">三、為什麼台灣玩家突然變多？</a></li>
+        <li><a href="#unofficial">四、非官方遊戲與網址避雷</a></li>
+        <li><a href="#devices">五、電腦與手機操作、快捷鍵</a></li>
+        <li><a href="#starter">六、新手入門：帳號、難度與升級</a></li>
+        <li><a href="#job1">七、六個一轉職業怎麼選</a></li>
+        <li><a href="#job2">八、二轉攻略：12 種職業怎麼選</a></li>
+        <li><a href="#leveling">九、新手練功：關卡順序與裝備分數</a></li>
+        <li><a href="#gear">十、裝備精煉、卡片、素質與寵物</a></li>
+        <li><a href="#party">十一、組隊玩法與最新交易規則</a></li>
+        <li><a href="#changelog">十二、版本更新紀錄與常見 FAQ</a></li>
+      </ul>
+    </nav>
+
+    <h2 id="diff">一、它跟官方 RO 差在哪？</h2>
+    <p>
+      先講清楚一件事：它不是 Gravity 發行的官方 RO，而是用仙境傳說素材做的非官方同人遊戲。最近台灣玩家變多，網路上冒出好幾個名稱差不多的入口，開玩之前先確認網址比較保險。
+    </p>
+    <p>
+      簡單說，就是把你熟悉的仙境傳說，改成割草式的生存玩法。你可以選劍士、魔法師、弓箭手、服事、盜賊或商人，在熟悉的地圖裡對付一大群魔物，靠升級、裝備和天賦慢慢變強。
+    </p>
+
+    <h2 id="loop">二、一局怎麼打</h2>
+    <p>
+      整個遊戲分三塊：<strong>城鎮整備、關卡戰鬥、角色養成</strong>。
+    </p>
+    <p>
+      進了普隆德拉廣場，找遠征隊長選關卡、調難度就能出發。戰鬥時你只管走位，普通攻擊和技能只要冷卻好了、射程內有目標，就會自動放出去。
+    </p>
+    <p>
+      打怪會掉經驗寶石，升級時從三張卡片裡挑一張，拿新技能或強化舊的。菁英怪有機會掉寶箱，小頭目和 MVP 會在過程中出場。打贏關卡 MVP，就能解鎖下一張地圖。
+    </p>
+    <p>
+      跟只看單局成績的倖存者遊戲不一樣，這款保留了 RO 的長期養成：
+    </p>
+    <ul>
+      <li><strong>角色等級</strong>：基本等級最高 99，另外還有職業等級（Job Lv）。</li>
+      <li><strong>六大素質</strong>：STR、AGI、VIT、INT、DEX、LUK。</li>
+      <li><strong>天賦系統</strong>：每個職業有三棵天賦樹。</li>
+      <li><strong>裝備系統</strong>：有不同品質的裝備，可以靠精煉變強。</li>
+      <li><strong>卡片系統</strong>：收集魔物卡片，鑲在指定裝備上。</li>
+      <li><strong>寵物系統</strong>：收寵物蛋、養親密度、解鎖配件。</li>
+    </ul>
+    <p>
+      每局結束後，基本等級、職業等級、裝備和卡片都會留著，所以同一張地圖可以一直重刷，慢慢把角色養起來。
+    </p>
+
+    <h2 id="tw-boom">三、為什麼台灣玩家突然變多？</h2>
+    <p>
+      一大原因是有繁體中文。2026 年 11 月 9 日 Beta 0.5.2 加入繁中，後來社群玩家 Syuan 幫忙校對職業和技能名稱，悟靈士、神槍手、吟遊詩人這些，都用台灣老玩家習慣的譯法。
+    </p>
+    <p>
+      再加上普隆德拉廣場、波利、MVP 和經典 BGM，曾經玩過 RO 的人一進去就有熟悉感。也有新聞報導它在 Threads 上快速擴散，伺服器還因為人太多出現排隊。
+    </p>
+
+    <h2 id="unofficial">四、非官方遊戲，先想清楚這幾件事</h2>
+    <p>
+      開發者的法律聲明寫得很直接：遊戲沒有取得 Gravity、李命進或其他 RO 營運商的正式認可。內容可能因為版權要求被修改或移除，進度可能重置，甚至可能停止營運。
+    </p>
+    <p>所以心態放輕鬆比較好：</p>
+    <ol>
+      <li>帳號和角色沒有現實財產價值。</li>
+      <li>開發者可能調整內容，甚至停止服務。</li>
+      <li>別花錢跟第三方買帳號或裝備。</li>
+      <li>別在非官方網站輸入你原本的遊戲帳號密碼。</li>
+    </ol>
+    <div class="callout">
+      <strong>遊玩心態提醒：</strong>當成免費的同人遊戲玩就好，不要投入你輸不起的錢與時間成本。
+    </div>
+
+    <h3>官方網址是哪個</h3>
+    <p>
+      原作者版本的網址是 <a href="https://ro-survivors.com/" target="_blank" rel="noopener noreferrer">https://ro-survivors.com/</a>。原作者聲明，遊戲只透過這個網站提供，其他人自己架的版本，不代表他授權或合作。
+    </p>
+    <p>
+      進去之前，先看一下網址有沒有連字號（<code>ro-survivors</code>），免得點到同名的別站。
+    </p>
+
+    <h3>怎麼分辨複製站</h3>
+    <p>
+      現在網路上有不少名稱類似的站，有的還加了拍賣、排行榜、組隊之類的功能。但名字一樣，不代表伺服器、帳號系統或角色資料是同一套。
+    </p>
+    <p>自己判斷的時候，可以看這幾點：</p>
+    <ul>
+      <li>原作者版本只有 <code>ro-survivors.com</code>。</li>
+      <li>其他網站：先確認營運者、帳號政策，還有資料有沒有互通。</li>
+      <li>來源不明的下載檔，別亂裝。</li>
+      <li>原作者版本沒有遊戲內購買，第三方收費不是官方服務。</li>
+    </ul>
+    <p>只想玩 Reven4nt 做的原版，從原作者網站進就對了。</p>
+
+    <h2 id="devices">五、電腦和手機都能玩</h2>
+    <p>
+      瀏覽器就能玩，不用裝大型程式。電腦用鍵盤、滑鼠或相容手把；手機有觸控搖桿，也可以用瀏覽器的「加入主畫面」，開起來像 App 一樣。
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>裝置</th>
+            <th>操作方式</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Windows 電腦</strong></td>
+            <td>鍵盤、滑鼠或手把</td>
+          </tr>
+          <tr>
+            <td><strong>Mac 電腦</strong></td>
+            <td>瀏覽器與相容操作裝置</td>
+          </tr>
+          <tr>
+            <td><strong>Android 手機</strong></td>
+            <td>手機瀏覽器、觸控搖桿</td>
+          </tr>
+          <tr>
+            <td><strong>iPhone</strong></td>
+            <td>Safari、加入主畫面</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>電腦跟手機登同一個帳號，進度就接得上。</p>
+
+    <h3>快捷鍵</h3>
+    <p>下面是遊戲內圖書館員說明裡的主要操作：</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>操作</th>
+            <th>鍵盤／滑鼠</th>
+            <th>手把或手機</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>移動</strong></td>
+            <td>WASD、方向鍵、滑鼠點擊</td>
+            <td>觸控搖桿、左搖桿</td>
+          </tr>
+          <tr>
+            <td><strong>傷害統計</strong></td>
+            <td>K</td>
+            <td>小地圖按鈕</td>
+          </tr>
+          <tr>
+            <td><strong>暫停／關閉視窗</strong></td>
+            <td>Esc</td>
+            <td>Start、B</td>
+          </tr>
+          <tr>
+            <td><strong>選擇升級卡片</strong></td>
+            <td>滑鼠點擊</td>
+            <td>點擊、A</td>
+          </tr>
+          <tr>
+            <td><strong>累積升級選擇</strong></td>
+            <td>B</td>
+            <td>升級按鈕</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      手機玩到卡頓、發燒或閃退的話，先把畫質和特效透明度調低，再把其他吃記憶體的 App 關掉。
+    </p>
+
+    <h2 id="starter">六、新手入門：帳號、難度、升級</h2>
+    <p>
+      第一次進遊戲，不用急著研究所有技能和裝備。先熟悉城鎮、選職業、關卡怎麼升級，之後再慢慢碰養成。
+    </p>
+
+    <h3>建立帳號和角色</h3>
+    <p>
+      目前登入需要建帳號，免費，也不用填電子郵件。不過帳號和訪客模式的說明，不同公開頁面講法不太一樣，你看登入畫面怎麼寫，就怎麼走。
+    </p>
+    <p>帳號有幾個細節：</p>
+    <ul>
+      <li>一個帳號最多 15 個角色。</li>
+      <li>背包、未鑲入的卡片、礦石、卡普拉點數等部分資源，帳號共用。</li>
+      <li>建帳號時可以設安全問題，忘記密碼時靠它找回。</li>
+      <li>安全問題設好就不能隨便改，答案自己記好。</li>
+    </ul>
+    <p>伺服器滿了要排隊；廣場閒置太久也會被登出，把位置讓出來。</p>
+
+    <h3>難度怎麼調</h3>
+    <p>
+      找遠征隊長選關後，會看到難度滑桿，影響怪物數量、血量、攻擊力、移動速度和事件強度。難度越高，戰利品倍率越高，也越容易死。
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>遊玩方式</th>
+            <th>最高戰利品倍率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>單人</strong></td>
+            <td>×2.5</td>
+          </tr>
+          <tr>
+            <td><strong>組隊</strong></td>
+            <td>×2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      剛開始別把難度拉滿。先熟悉技能和走位，穩定打贏 MVP，再慢慢往上加比較有效率。
+    </p>
+
+    <h3>立即升級和累積升級</h3>
+    <p>
+      Beta 0.7 加入累積升級，你可以自己決定升級時要不要暫停戰鬥。
+    </p>
+    <ul>
+      <li><strong>立即升級</strong>：每次升級或開寶箱就暫停，選完卡片再繼續打。</li>
+      <li><strong>累積升級</strong>：升級和寶箱先存著，不打斷戰鬥，之後用快捷鍵或畫面按鈕一次選完。</li>
+    </ul>
+    <p>
+      累積升級比較適合已經熟悉戰鬥節奏的人。不過小心一點：沒領的升級堆太多就倒下，這些選擇可能會消失。
+    </p>
+
+    <h3>一局的流程</h3>
+    <p>新手可以先記這個順序：</p>
+    <ol>
+      <li>在普隆德拉廣場選職業和裝備。</li>
+      <li>找遠征隊長選關卡。</li>
+      <li>進戰場先拿第一個技能。</li>
+      <li>收經驗寶石，升級強化。</li>
+      <li>打菁英怪拿寶箱。</li>
+      <li>注意小頭目和 MVP 的攻擊範圍。</li>
+      <li>打贏 MVP，解鎖後續地圖。</li>
+    </ol>
+    <p>
+      開局有一段怪物較少的緩衝時間，拿來熟悉移動和技能射程剛好。地上出現紅色攻擊範圍就趕快離開，別為了繼續輸出站著吃傷害。
+    </p>
+
+    <h2 id="job1">七、六個一轉職業怎麼選</h2>
+    <p>
+      目前能直接建立的有六種：劍士、魔法師、弓箭手、服事、盜賊、商人。初始血量、移動速度、攻擊距離和技能機制都不太一樣，所以別只看傷害數字，也想想自己愛近戰還是遠程，閃不閃得掉怪物的攻擊。
+    </p>
+    <p>下表的數值來自遊戲內圖書館員的職業資料，之後平衡更新可能會改。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>職業</th>
+            <th>初始技能</th>
+            <th>主要傷害素質</th>
+            <th>HP</th>
+            <th>移動速度</th>
+            <th>護甲</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>劍士</strong></td>
+            <td>狂擊</td>
+            <td>STR</td>
+            <td>130</td>
+            <td>150</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td><strong>魔法師</strong></td>
+            <td>火箭術</td>
+            <td>INT</td>
+            <td>80</td>
+            <td>145</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><strong>弓箭手</strong></td>
+            <td>二連矢</td>
+            <td>DEX</td>
+            <td>95</td>
+            <td>165</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><strong>服事</strong></td>
+            <td>治癒術</td>
+            <td>INT／STR</td>
+            <td>105</td>
+            <td>150</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td><strong>盜賊</strong></td>
+            <td>施毒</td>
+            <td>STR</td>
+            <td>90</td>
+            <td>175</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><strong>商人</strong></td>
+            <td>金錢攻擊</td>
+            <td>STR</td>
+            <td>130</td>
+            <td>145</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>劍士：第一次玩就選它</h3>
+    <p>
+      劍士的強項是血量和護甲，初始 HP 130，是一轉裡最高的幾個之一。主技能狂擊走近戰，喜歡貼著怪打的人會很順。
+    </p>
+    <p>
+      劍士系用單手或雙手武器時，近戰普通攻擊還有額外傷害加成。還沒摸清怪物攻擊模式的話，它的容錯率最高。
+    </p>
+
+    <h3>魔法師：遠距離法術輸出</h3>
+    <p>
+      魔法師吃 INT，初始技能是火箭術，後面會拿到冰箭術、雷擊術。三種箭術的攻擊方式和詠唱設定都不同，適合喜歡遠距離清怪的人。
+    </p>
+    <p>
+      代價是初始 HP 只有 80，六個職業裡最低。被一大群怪包圍的時候，得靠走位把距離拉開。
+    </p>
+
+    <h3>弓箭手：又快又能貫穿</h3>
+    <p>
+      弓箭手初始移動速度 165，用弓時有貫穿攻擊。初始技能二連矢很適合邊跑邊打，喜歡放風箏的人會喜歡它。
+    </p>
+    <p>
+      跟劍士比，弓箭手血量少、護甲也沒有加成，所以不太適合在怪群裡待太久。
+    </p>
+
+    <h3>服事：能治療，也能走近戰</h3>
+    <p>
+      服事比較特別，因為二轉可以選祭司或武僧。想當祭司的話，主要吃 INT；想轉武僧，可以考慮 STR。
+    </p>
+    <p>
+      治癒術能回血，組隊時也能支援隊友。喜歡輔助、治療和團隊合作的人選它；想玩近戰連擊，也可以走武僧路線。
+    </p>
+
+    <h3>盜賊：六個職業裡最快的</h3>
+    <p>
+      盜賊初始移動速度 175，是六個職業裡最快的。初始技能施毒讓攻擊帶毒素傷害，後面還可以搭飛刀扇、投擲石頭。
+    </p>
+    <p>
+      代價是 HP 只有 90，沒有劍士和商人耐打，得靠移動和攻擊節奏避免被圍。喜歡高速清怪的人適合。
+    </p>
+
+    <h3>商人：拿金幣當武器</h3>
+    <p>
+      商人初始 HP 130，跟劍士一樣耐打。主技能金錢攻擊和金幣雨都拿金幣造成傷害，節奏偏慢，但單發威力高。
+    </p>
+    <p>
+      商人系也有近戰攻擊加成，二轉可以走鐵匠或鍊金術師。喜歡重擊和特殊技能機制的人，可以試試。
+    </p>
+
+    <h3>還在猶豫的話</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>你的需求</th>
+            <th>推薦職業</th>
+            <th>原因</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>第一次遊玩</strong></td>
+            <td>劍士</td>
+            <td>血量高、容錯率好</td>
+          </tr>
+          <tr>
+            <td><strong>喜歡魔法</strong></td>
+            <td>魔法師</td>
+            <td>遠距離魔法攻擊</td>
+          </tr>
+          <tr>
+            <td><strong>喜歡風箏怪物</strong></td>
+            <td>弓箭手</td>
+            <td>移動速度快</td>
+          </tr>
+          <tr>
+            <td><strong>喜歡支援隊友</strong></td>
+            <td>服事</td>
+            <td>有治療與祝福技能</td>
+          </tr>
+          <tr>
+            <td><strong>喜歡高速戰鬥</strong></td>
+            <td>盜賊</td>
+            <td>六職中移動速度最快</td>
+          </tr>
+          <tr>
+            <td><strong>喜歡重擊輸出</strong></td>
+            <td>商人</td>
+            <td>血量高，金幣攻擊有特色</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      另外，跆拳少年、忍者、神槍手曾出現在後續規劃裡，但角色建立畫面上的鎖定圖示，不代表已經開放。能玩哪些職業，看建立角色時有哪些選項。
+    </p>
+
+    <h2 id="job2">八、二轉攻略：12 種職業怎麼選</h2>
+    <p>
+      二轉是這款遊戲養成的重頭戲。一轉練到一定程度，就能在普隆德拉城走劇情轉職。每個一轉職業有兩條路，選不同，技能、天賦和打法都會跟著變。
+    </p>
+
+    <h3>二轉條件</h3>
+    <p>目前資料列出的條件有這些：</p>
+    <ul>
+      <li>職業等級達到 50。</li>
+      <li>擊敗指定的前置 MVP（月夜貓）。</li>
+      <li>裝備分數達到 185。</li>
+      <li>開放普隆德拉城劇情並完成關卡。</li>
+    </ul>
+    <p>
+      條件都達到，就能進普隆德拉城完成二轉選擇。這個劇情關比較特殊，不能組隊，也沒有一般關卡的難度調整和戰利品結算。
+    </p>
+    <p>
+      同一帳號如果已經有角色通過劇情，其他符合條件的角色可以用跳過劇情的方式轉職，實際選項看遊戲內顯示。
+    </p>
+
+    <h3>12 種二轉的能力對照</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>一轉職業</th>
+            <th>二轉職業</th>
+            <th>HP</th>
+            <th>職業特色</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>劍士</td>
+            <td><strong>騎士</strong></td>
+            <td>360</td>
+            <td>大嘴鳥、長矛與雙手劍</td>
+          </tr>
+          <tr>
+            <td>劍士</td>
+            <td><strong>十字軍</strong></td>
+            <td>380</td>
+            <td>盾牌、防禦與神聖攻擊</td>
+          </tr>
+          <tr>
+            <td>魔法師</td>
+            <td><strong>巫師</strong></td>
+            <td>205</td>
+            <td>隕石、暴風雪與大範圍魔法</td>
+          </tr>
+          <tr>
+            <td>魔法師</td>
+            <td><strong>賢者</strong></td>
+            <td>240</td>
+            <td>元素、魔法領域與自動法術</td>
+          </tr>
+          <tr>
+            <td>弓箭手</td>
+            <td><strong>獵人</strong></td>
+            <td>230</td>
+            <td>獵鷹、陷阱與遠程攻擊</td>
+          </tr>
+          <tr>
+            <td>弓箭手</td>
+            <td><strong>吟遊詩人／舞孃</strong></td>
+            <td>220</td>
+            <td>歌曲、舞蹈與輔助效果</td>
+          </tr>
+          <tr>
+            <td>服事</td>
+            <td><strong>祭司</strong></td>
+            <td>270</td>
+            <td>治療、祝福與驅魔</td>
+          </tr>
+          <tr>
+            <td>服事</td>
+            <td><strong>武僧</strong></td>
+            <td>300</td>
+            <td>拳擊、氣彈與連續技</td>
+          </tr>
+          <tr>
+            <td>盜賊</td>
+            <td><strong>刺客</strong></td>
+            <td>250</td>
+            <td>拳刃、毒素與暗影攻擊</td>
+          </tr>
+          <tr>
+            <td>盜賊</td>
+            <td><strong>流氓</strong></td>
+            <td>205</td>
+            <td>背刺、掠奪與特殊技巧</td>
+          </tr>
+          <tr>
+            <td>商人</td>
+            <td><strong>鐵匠</strong></td>
+            <td>370</td>
+            <td>錘擊、鍛造與近戰攻擊</td>
+          </tr>
+          <tr>
+            <td>商人</td>
+            <td><strong>鍊金術師</strong></td>
+            <td>370</td>
+            <td>強酸、火焰瓶、植物與生命體</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      HP 和職業定位來自 Beta 版資料，二轉還在測試，技能和數值可能調整。吟遊詩人和舞孃其實是同一個二轉職業，依角色性別顯示不同名稱，共用技能和天賦設定。
+    </p>
+
+    <h3>劍士：騎士還是十字軍</h3>
+    <p>
+      騎士偏攻擊型近戰，能用長矛和雙手劍，還能騎大嘴鳥，適合愛近身持續輸出的人。
+    </p>
+    <p>
+      十字軍 HP 380，是表列二轉裡最高的，靠盾牌、防禦和神聖攻擊。想轉職後還是穩穩的，就選十字軍。
+    </p>
+
+    <h3>魔法師：巫師還是賢者</h3>
+    <p>
+      巫師靠隕石術、暴風雪這類大範圍魔法，想快速清一大片怪就選它。賢者比較偏元素控制和魔法效果，除了攻擊技能，還有魔法領域和自動施法。
+    </p>
+    <p>簡單講：巫師直接轟，賢者花樣多。</p>
+
+    <h3>弓箭手：獵人還是吟遊詩人／舞孃</h3>
+    <p>
+      獵人延續弓箭手的遠程攻擊，再加上獵鷹和陷阱，適合遠距離輸出、控場。
+    </p>
+    <p>
+      吟遊詩人／舞孃靠歌曲和舞蹈強化自己，也能影響周圍的怪。想玩輔助、不想只是射箭的話，走這條路。
+    </p>
+
+    <h3>服事：祭司還是武僧</h3>
+    <p>
+      祭司延續服事的治療和祝福，再加強驅魔和神聖攻擊。主要想當輔助的話，它最直接。
+    </p>
+    <p>
+      武僧的玩法差很多，靠 STR 走近戰，有拳擊、氣彈和連續技，RO 玩家熟悉的阿修羅霸凰拳也在。想從服事變成近戰輸出，先考慮武僧。
+    </p>
+
+    <h3>盜賊：刺客還是流氓</h3>
+    <p>
+      刺客以拳刃、毒素和暗影攻擊為主，延續盜賊的快節奏，適合愛近戰爆發、高機動的人。
+    </p>
+    <p>
+      流氓擅長背刺、掠奪和各種特殊手段。不想只靠直接傷害、喜歡技能組合的話，選流氓。
+    </p>
+
+    <h3>商人：鐵匠還是鍊金術師</h3>
+    <p>
+      鐵匠靠錘擊和鍛造相關能力，延續商人的近戰重擊。鍊金術師用強酸、火焰瓶、植物和生命體，玩法比一般近戰職業多元。
+    </p>
+    <p>兩個的初始 HP 都是 370，所以挑自己喜歡的技能機制就好。</p>
+
+    <h3>新手該選哪一個</h3>
+    <p>
+      只看初始 HP，十字軍、鐵匠、鍊金術師和騎士都比較耐打。但 HP 不是全部，技能範圍、冷卻、攻擊方式和天賦配置，都會影響實戰表現。簡單對照一下：
+    </p>
+    <ul>
+      <li><strong>想耐打</strong>：十字軍、騎士、鐵匠。</li>
+      <li><strong>大範圍魔法</strong>：巫師。</li>
+      <li><strong>遠程攻擊</strong>：獵人。</li>
+      <li><strong>治療支援</strong>：祭司。</li>
+      <li><strong>近戰連擊</strong>：武僧。</li>
+      <li><strong>毒素與爆發</strong>：刺客。</li>
+      <li><strong>想玩特別的</strong>：賢者、鍊金術師、流氓。</li>
+    </ul>
+    <p>
+      還沒想好的話，先去看官方天賦樹：<a href="https://ro-survivors.com/talents.html" target="_blank" rel="noopener noreferrer">https://ro-survivors.com/talents.html</a>。二轉後會保留一轉已拿的技能和天賦，再加上二轉的新能力。天賦樹有不同流派，先想好要玩哪一種，再決定點哪個分支。
+    </p>
+
+    <h2 id="leveling">九、新手練功：關卡順序與裝備分數</h2>
+    <p>
+      新手最常卡住的，通常不是技能不夠，而是等級、裝備分數和解鎖條件沒跟上。每張地圖的怪物強度和職業經驗收益都不同，同一張圖的職業經驗開始變少，就是該往下一張走的時候。
+    </p>
+    <p>下表依 Beta 0.7.1 的關卡資料整理，實際要求看遠征隊長怎麼顯示。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>關卡</th>
+            <th>建議等級</th>
+            <th>最低裝備分數</th>
+            <th>職業等級參考上限</th>
+            <th>備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>普隆德拉原野</strong></td>
+            <td>1～8</td>
+            <td>0</td>
+            <td>12</td>
+            <td>起始地圖</td>
+          </tr>
+          <tr>
+            <td><strong>普隆德拉地下水道</strong></td>
+            <td>9～12</td>
+            <td>20</td>
+            <td>20</td>
+            <td>MVP：黃金盜蟲</td>
+          </tr>
+          <tr>
+            <td><strong>沉船</strong></td>
+            <td>13～15</td>
+            <td>40</td>
+            <td>25</td>
+            <td>有劇情關卡</td>
+          </tr>
+          <tr>
+            <td><strong>柏伊亞嵐島</strong></td>
+            <td>16～20</td>
+            <td>110</td>
+            <td>31</td>
+            <td>MVP：海王</td>
+          </tr>
+          <tr>
+            <td><strong>斐揚森林</strong></td>
+            <td>21～25</td>
+            <td>135</td>
+            <td>38</td>
+            <td>擊敗前置 MVP 後開放</td>
+          </tr>
+          <tr>
+            <td><strong>斐揚洞穴</strong></td>
+            <td>26～30</td>
+            <td>165</td>
+            <td>49</td>
+            <td>衝職業等級的重要地圖</td>
+          </tr>
+          <tr>
+            <td><strong>普隆德拉城</strong></td>
+            <td>31～35</td>
+            <td>185</td>
+            <td>Job 50</td>
+            <td>二轉劇情</td>
+          </tr>
+          <tr>
+            <td><strong>燈籠節</strong></td>
+            <td>26～30</td>
+            <td>0</td>
+            <td>依活動設定</td>
+            <td>季節限定地圖</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>為什麼要刷斐揚洞穴</h3>
+    <p>
+      這是二轉前很重要的練功圖。前面幾張圖的職業經驗都有收益上限，等級接近上限後，再刷同一張就越來越沒效率。
+    </p>
+    <p>想把職業等級拉到 50，通常得在斐揚洞穴反覆打。</p>
+
+    <h3>裝備分數怎麼拉</h3>
+    <p>
+      每張圖都有最低裝備分數，沒達標就進不去。分數主要靠換更高階的裝備、替掉不合適的裝備，還有提高精煉。寵物也可能算進裝備分數，所以別只盯著武器和防具。
+    </p>
+    <p>等級夠了卻進不了下一張圖，就檢查這四件事：</p>
+    <ol>
+      <li>前一張圖的 MVP 打過了嗎？</li>
+      <li>裝備分數達標了嗎？</li>
+      <li>有沒有符合要求的寵物或裝備？</li>
+      <li>遠征隊長顯示的前置條件都完成了嗎？</li>
+    </ol>
+
+    <h2 id="gear">十、裝備精煉、卡片、素質與寵物</h2>
+    <p>
+      裝備是戰力的主要來源。怪物會掉不同品質的裝備和卡片，你可以直接換上，不要的就交給礦石商人處理。
+    </p>
+
+    <h3>品質和卡片</h3>
+    <p>
+      裝備依品質分顏色，品質越高，通常能力越好、附加效果越多。傳說裝備可能帶額外的技能傷害加成，所以挑裝備除了看裝備分數，也看附加能力吃不吃你的職業。
+    </p>
+    <p>
+      卡片靠擊敗特定魔物取得，可以鑲在指定部位，提供額外能力。拿到不錯的卡片先別急著鑲，確認那件裝備值不值得長期用，再決定。
+    </p>
+
+    <h3>精煉最高到幾級</h3>
+    <p>
+      精煉要找普隆德拉廣場的鐵匠忽克連。依測試版本的資料，最高可以到 +10，+4 以內是安全區，+5 開始失敗，可能讓裝備和卡片一起毀掉。
+    </p>
+    <p>
+      新手先把常用裝備推到 +4 就好，比急著衝高精煉穩得多。背包裡的裝備也可以開保護功能，避免手滑賣掉或丟掉。
+    </p>
+
+    <h3>卡普拉點數可以做什麼</h3>
+    <p>
+      不要的裝備和卡片交給礦石商人，可以換卡普拉點數，拿來買精煉礦石、寵物配件和其他資源。
+    </p>
+    <p>部分物品是帳號共用的，所以開新角色時，也用得到已經累積的資源。</p>
+
+    <h3>素質與天賦怎麼配</h3>
+    <p>遊戲裡有六種基本素質：</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>素質</th>
+            <th>主要作用</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>STR</strong></td>
+            <td>近戰物理傷害</td>
+          </tr>
+          <tr>
+            <td><strong>AGI</strong></td>
+            <td>冷卻縮減等能力</td>
+          </tr>
+          <tr>
+            <td><strong>VIT</strong></td>
+            <td>生命恢復與治療相關效果</td>
+          </tr>
+          <tr>
+            <td><strong>INT</strong></td>
+            <td>魔法傷害</td>
+          </tr>
+          <tr>
+            <td><strong>DEX</strong></td>
+            <td>遠程攻擊與相關能力</td>
+          </tr>
+          <tr>
+            <td><strong>LUK</strong></td>
+            <td>爆擊率等能力</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      每個職業的主要傷害素質不同：劍士、盜賊、商人多半吃 STR，魔法師吃 INT，弓箭手偏 DEX。服事要看二轉方向，想轉祭司偏 INT，想轉武僧可以考慮 STR。
+    </p>
+    <p>
+      <strong>素質要不要全點同一項？</strong>不用。部分數值有收益遞減，全壓在單一素質，能力不會無限成長。除了主要傷害素質，也想想冷卻縮減、生存能力和其他屬性實際帶來多少好處。素質可以在面板重置，不確定就先試幾種配置，看實戰表現再調。
+    </p>
+    <p>
+      <strong>天賦樹怎麼選？</strong>每個職業有三棵天賦樹，職業等級提升就會拿到天賦點數。天賦可以強化技能傷害、增加攻擊目標數，或加上特殊效果。有些高階天賦甚至會改變技能的用法，所以別只看單一傷害數字。二轉方向決定了，先研究那個職業的技能和天賦搭配，再開始點。
+    </p>
+
+    <h3>寵物和成就</h3>
+    <p>
+      寵物蛋靠擊敗特定魔物取得，帶著寵物一起冒險，可以提升親密度。親密度夠高了，可以找寵物飼育員買配件，或繼續培養。
+    </p>
+    <p>
+      成就以帳號為單位，達成條件拿事蹟點數，可以換部分遊戲功能。擊敗特定關卡頭目到指定次數，還有對應的外觀獎勵。愛收集的人，寵物、成就和頭目擊殺紀錄都可以慢慢累積。
+    </p>
+
+    <h2 id="party">十一、組隊玩法與最新交易規則</h2>
+    <p>
+      可以在普隆德拉廣場邀請其他玩家組隊。依目前的版本規則，一隊最多 3 人，隊長負責選關卡和主機端運算。
+    </p>
+    <p>組隊時有幾個細節：</p>
+    <ul>
+      <li>經驗、本局等級和金幣依隊伍規則共享。</li>
+      <li>肉等部分拾取物品，由實際撿到的玩家持有。</li>
+      <li>關卡結束時，戰利品會進行分配。</li>
+      <li>每位玩家每局有 2 次 Need 機會。</li>
+      <li>Need 只能用在自己職業能穿戴的物品。</li>
+      <li>普隆德拉城的二轉劇情不能組隊。</li>
+    </ul>
+    <p>想拿特定職業用的傳說裝備，先跟隊友講好，結算時比較不會吵起來。</p>
+
+    <h3>最新交易規則：好友限制、每日次數、公平交易</h3>
+    <p>
+      交易系統是 2026 年 11 月中旬改動最大的地方之一。早期玩家可以比較自由地換裝備，後來機器人刷寶和現金交易變多，開發者開始限制條件，避免新帳號把物品大量轉給主帳號。
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>交易項目</th>
+            <th>規則</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>帳號資格</strong></td>
+            <td>雙方帳號建立滿 3 天</td>
+          </tr>
+          <tr>
+            <td><strong>每日次數</strong></td>
+            <td>每個帳號每天 3 次</td>
+          </tr>
+          <tr>
+            <td><strong>普通至史詩裝備</strong></td>
+            <td>需與好友建立好友關係滿 3 天</td>
+          </tr>
+          <tr>
+            <td><strong>傳說裝備與卡片</strong></td>
+            <td>取得後 1 小時內，限當時同隊隊友交易</td>
+          </tr>
+          <tr>
+            <td><strong>單人取得的傳說物品</strong></td>
+            <td>不符合上述隊伍交易條件</td>
+          </tr>
+          <tr>
+            <td><strong>交易取得物品</strong></td>
+            <td>綁定帳號，無法再次轉交</td>
+          </tr>
+          <tr>
+            <td><strong>卡普拉點數與礦石</strong></td>
+            <td>不可交易</td>
+          </tr>
+          <tr>
+            <td><strong>已鑲嵌卡片的裝備</strong></td>
+            <td>不可交易</td>
+          </tr>
+          <tr>
+            <td><strong>改版前取得的物品</strong></td>
+            <td>依當時規則列為不可交易</td>
+          </tr>
+          <tr>
+            <td><strong>禁言帳號</strong></td>
+            <td>禁言期間無法發起或接受交易</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      後來 Beta 0.7.3 又加入公平交易限制：雙方放入的物品價值，差距最多不能超過 10%。所以就算帳號和好友條件都符合，也沒辦法單方面隨便送。
+    </p>
+
+    <h3>想送裝備給朋友怎麼做</h3>
+    <p>
+      想跟朋友換普通裝備，先確認雙方帳號都符合資格，也要提早加好友。目標是傳說裝備的話，打關卡之前就先組隊，因為傳說物品的交易資格，跟取得時間和當時的隊伍狀態有關。
+    </p>
+    <p>
+      確認交易之前，物品內容要仔細看。開發者已經提醒，確認後因為操作失誤或信錯人造成的損失，不保證能追回。
+    </p>
+
+    <h3>可以用現金買賣裝備嗎</h3>
+    <p>
+      不行。RMT（Real Money Trading）就是用真錢買賣帳號、裝備、物品或遊戲點數。依遊戲規範，這會讓買賣雙方帳號被永久刪除，而且沒有補償。
+    </p>
+    <p>
+      修改遊戲程式、用機器人或巨集、透過瀏覽器主控台拿不公平優勢、利用漏洞牟利，一樣會被處分。發現漏洞請透過官方管道回報，別拿來賺。
+    </p>
+
+    <h2 id="changelog">十二、版本更新紀錄與常見 FAQ</h2>
+    <p>
+      遊戲還在測試，職業、技能、交易和伺服器規則都可能變。原始資料整理到 Beta 0.7.1，不過到 2026 年 11 月 23 日為止，查得到的版本紀錄已經有 Beta 0.7.6（11 月 19 日）。
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>版本</th>
+            <th>日期</th>
+            <th>主要更新</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Beta 0.7.6</strong></td>
+            <td>11/19</td>
+            <td>升級自動選擇功能、同網路帳號限制</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.7.3</strong></td>
+            <td>11/17</td>
+            <td>公平交易限制、加入日文</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.7.1</strong></td>
+            <td>11/16</td>
+            <td>修正二轉傷害調整</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.7</strong></td>
+            <td>11/15</td>
+            <td>燈籠節季節關卡</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.6.8</strong></td>
+            <td>11/14</td>
+            <td>大幅調整交易規則</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.6.6</strong></td>
+            <td>11/13</td>
+            <td>帳號與遊戲登入機制調整</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.5.4</strong></td>
+            <td>11/10</td>
+            <td>繁體中文譯名校對</td>
+          </tr>
+          <tr>
+            <td><strong>Beta 0.5.2</strong></td>
+            <td>11/09</td>
+            <td>加入繁體中文</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      交易條件、職業平衡和裝備數值最容易變，每次登入先看一下遊戲內的最新消息。官方入口在這裡：<a href="https://ro-survivors.com/" target="_blank" rel="noopener noreferrer">https://ro-survivors.com/</a>
+    </p>
+
+    <h3>常見問題 FAQ</h3>
+
+    <div class="faq-item">
+      <div class="faq-q">Q1：RO 倖存者是官方正版遊戲嗎？</div>
+      <p class="faq-a">不是。它是 Reven4nt 做的非官方同人網頁遊戲，沒有 Gravity 或其他 RO 營運商的授權。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q2：官方網址是什麼？</div>
+      <p class="faq-a">原作者版本的唯一入口是 https://ro-survivors.com/。其他同名網站不是原作者經營的，帳號和資料也別當成互通。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q3：需要下載嗎？</div>
+      <p class="faq-a">不用，電腦或手機瀏覽器就能玩，也可以把網站加到手機主畫面。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q4：有繁體中文嗎？</div>
+      <p class="faq-a">有。Beta 0.5.2 已經加入，之後經社群玩家校對，可以在遊戲語言選項裡切換。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q5：怎麼二轉？</div>
+      <p class="faq-a">職業等級要 50，再加上前置 MVP、裝備分數和普隆德拉城劇情。每個一轉職業都有兩種二轉可以選。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q6：哪個職業最適合新手？</div>
+      <p class="faq-a">劍士最好上手，初始 HP 130，還有護甲。想打遠距離選弓箭手或魔法師，喜歡高速移動就選盜賊。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q7：二轉哪個職業最耐打？</div>
+      <p class="faq-a">依目前的 HP 數值，十字軍 380，鐵匠和鍊金術師 370，騎士 360，都是血量比較高的二轉。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q8：可以跟朋友交易嗎？</div>
+      <p class="faq-a">可以，但有帳號建立時間、好友關係、每日次數和物品類型的限制。傳說裝備和卡片另有隊伍與取得時間的條件，還有 10% 的公平交易限制。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q9：可以用現金買裝備嗎？</div>
+      <p class="faq-a">不可以。違規可能被永久刪帳號，買賣雙方都會受到處分。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q10：有手機版嗎？</div>
+      <p class="faq-a">用 Android 或 iPhone 的瀏覽器就能玩，沒有獨立的 App。可以加到主畫面，開起來像 App 一樣。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q11：可以建立幾個角色？</div>
+      <p class="faq-a">一個帳號最多 15 個，不同角色可以試不同的職業和天賦方向。</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q12：現在是哪個版本？</div>
+      <p class="faq-a">截至 2026 年 11 月 23 日，查得到的紀錄是 Beta 0.7.6（11 月 19 日）。遊戲還在更新，實際版本請看登入後的公告。</p>
+    </div>
+
+    <div class="meta-note">
+      <div><strong>本文最後查核日期：</strong>2026 年 11 月 23 日</div>
+      <div><strong>主要資料來源：</strong></div>
+      <ul>
+        <li>RO Survivors 原作者遊戲網站</li>
+        <li>RO Survivors 法律聲明</li>
+        <li>RO Survivors 天賦樹總覽</li>
+        <li>NOWnews 相關新聞報導</li>
+        <li>Yahoo 新聞：RO 倖存者相關報導</li>
+      </ul>
+      <p style="margin: 10px 0 0;">
+        本文是遊戲資訊整理與新手攻略，不是 Gravity 官方公告。遊戲還在 Beta 測試，職業數值、關卡條件、交易規則和更新內容都可能變，請以遊戲內最新公告為準。
+      </p>
+    </div>
+
+    <div class="next-box">
+      <strong style="color: var(--gold); display: block; margin-bottom: 6px;">繼續逛逛專區與核心筆記</strong>
+      <p style="margin: 0 0 8px;">
+        想看更多 RO 倖存者整理，可回到 <a href="/trending/ro-survivors/">RO 倖存者攻略專區</a> 或 <a href="/trending/">熱門趨勢專區</a>。
+      </p>
+      <p style="margin: 0; font-size: 0.92rem; color: var(--muted);">
+        想看機率、波動與風險控管邏輯，也可參考：<a href="/risk-management/ev-and-bankroll">期望值、波動率與風險拆解</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    playlogtw-玩局誌 · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
+  </footer>
+
+  <!-- 呼叫根目錄的共用選單腳本 -->
+  <script src="/nav.js" defer></script>
+</body>
+</html>
