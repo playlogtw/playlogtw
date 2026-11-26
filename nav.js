@@ -6,7 +6,7 @@
       label: "遊戲教學",
       href: "/game/",
       children: [
-        { label: "百家樂規則", href: "/game/baccarat/baccarat-rules" }
+        { label: "百家樂", href: "/game/baccarat/" }
         // 未來新增文章，只要在這裡加一行物件，全站選單自動同步
       ]
     },
