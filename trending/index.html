@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>熱門趨勢專區：爆紅遊戲、活動機制與實戰快訊｜playlogtw-玩局誌</title>
+  <meta name="description" content="playlogtw-玩局誌熱門趨勢專區，追蹤當下爆紅網頁遊戲、獨立小品、版本更新機制與數據拆解筆記。" />
+  <link rel="canonical" href="https://playlogtw.com/trending/" />
+
+  <!-- Favicon 與品牌圖示 -->
+  <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
+  <link rel="shortcut icon" href="/playlogtw-favicon.png" />
+  <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
+  <meta name="theme-color" content="#0b1120" />
+
+  <!-- Open Graph 社群預覽 -->
+  <meta property="og:site_name" content="playlogtw-玩局誌" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="熱門趨勢專區：爆紅遊戲、活動機制與實戰快訊｜playlogtw-玩局誌" />
+  <meta property="og:description" content="追蹤當下爆紅網頁遊戲、獨立小品、版本更新機制與數據拆解筆記。" />
+  <meta property="og:url" content="https://playlogtw.com/trending/" />
+  <meta property="og:image" content="https://playlogtw.com/playlogtw-favicon.png" />
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #162033;
+      --surface-2: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f59e0b;
+      --accent: #38bdf8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+    .site-nav a { color: var(--muted); text-decoration: none; }
+    .site-nav a:hover { color: var(--text); }
+    .nav-item { position: relative; }
+    .nav-row { display: inline-flex; align-items: center; gap: 4px; }
+    .sub-toggle {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px 4px;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .sub-toggle:hover,
+    .nav-item:hover .sub-toggle { color: var(--text); }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 170px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      display: none;
+      z-index: 30;
+    }
+    .sub-menu li a {
+      display: block;
+      padding: 8px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .sub-menu li a:hover {
+      background: var(--surface-2);
+      color: var(--gold);
+      text-decoration: none;
+    }
+    @media (hover: hover) and (min-width: 769px) {
+      .nav-item:hover .sub-menu { display: block; }
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: inline-block; }
+      #site-nav { width: 100%; }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+      }
+      .site-nav.open { display: flex; }
+      .site-nav > a,
+      .nav-row { padding: 8px 4px; }
+      .nav-row { justify-content: space-between; }
+      .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        border-left: 2px solid var(--border);
+        border-radius: 0;
+        margin-left: 10px;
+        padding: 4px 0 4px 10px;
+        background: transparent;
+      }
+      .nav-item.open .sub-menu { display: block; }
+    }
+
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    .breadcrumb {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.65rem, 3.2vw, 2.25rem);
+      line-height: 1.28;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0 0 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.28rem;
+      margin: 32px 0 14px;
+      color: var(--text);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.4;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .card.upcoming {
+      opacity: 0.75;
+      border-style: dashed;
+    }
+    .card.upcoming .card-badge {
+      color: var(--muted);
+    }
+    .next-box {
+      margin-top: 38px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/playlogtw-logo.png" alt="playlogtw-玩局誌 Logo" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">☰</button>
+
+      <!-- 共用選單容器（由根目錄 /nav.js 自動填入） -->
+      <div id="site-nav"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">首頁</a> / 熱門趨勢專區
+    </div>
+
+    <span class="tag">熱門趨勢 · 話題拆解與攻略快訊</span>
+    <h1>熱門趨勢專區</h1>
+    <p class="lead">
+      專門整理近期社群爆紅的網頁遊戲、獨立小品、限時活動機制與數值避雷筆記。把繁瑣的隱藏公式與開局陷阱直接拆開，讓你少走冤枉路。
+    </p>
+
+    <h2>近期熱門遊戲專區</h2>
+    <div class="grid">
+      <article class="card">
+        <div>
+          <span class="card-badge">網頁遊戲 · 話題新作</span>
+          <h3><a href="/trending/ro-survivors/">RO Survivors（RO 倖存者）攻略專區</a></h3>
+          <p>整理官方網址避雷、二轉（Job Lv 50）解鎖路線、AGI 冷卻縮減曲線、六大職業配點與尋寶率刷裝門檻。</p>
+        </div>
+        <div><a href="/trending/ro-survivors/">進入 RO 倖存者專區 →</a></div>
+      </article>
+    </div>
+
+    <h2>後續追蹤題材</h2>
+    <div class="grid">
+      <article class="card upcoming">
+        <div>
+          <span class="card-badge">觀察中 · 獨立與網頁小品</span>
+          <h3>社群爆紅刷寶／肉鴿小遊戲實測</h3>
+          <p>針對近期討論度高的免費網頁版與獨立作品，整理機制拆解與高效率配裝。</p>
+        </div>
+      </article>
+      <article class="card upcoming">
+        <div>
+          <span class="card-badge">觀察中 · 活動與機率機制</span>
+          <h3>熱門遊戲轉蛋／掉落率數據筆記</h3>
+          <p>用期望值與抽樣紀錄檢視各類活動池與掉落門檻的實際體感。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="next-box">
+      <strong style="color: var(--gold); display: block; margin-bottom: 6px;">想看長期牌桌與機率數據整理？</strong>
+      <p style="margin: 0;">
+        除了近期熱門話題，站上也持續整理各類經典牌桌規則與資金控管邏輯。可前往：<a href="/game/">遊戲教學總覽</a> 或 <a href="/risk-management/ev-and-bankroll">期望值與資金控管解析</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    playlogtw-玩局誌 · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
+  </footer>
+
+  <!-- 呼叫根目錄的共用選單腳本 -->
+  <script src="/nav.js" defer></script>
+</body>
+</html>
