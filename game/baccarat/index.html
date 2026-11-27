@@ -1,695 +1,347 @@
 <!DOCTYPE html>
-2
 <html lang="zh-Hant">
-3
 <head>
-4
-
-
   <meta charset="UTF-8" />
-5
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-6
   <title>百家樂專區：規則、玩法、牌路與實戰拆解｜playlogtw-玩局誌</title>
-7
   <meta name="description" content="playlogtw-玩局誌百家樂專區，整理百家樂規則、算點補牌表、牌桌玩法步驟、五種牌路圖解、下注控管與莊家優勢解析。" />
-8
   <link rel="canonical" href="https://playlogtw.com/game/baccarat/" />
-9
 
-10
   <!-- Favicon 與品牌圖示 -->
-11
   <link rel="icon" type="image/png" href="/playlogtw-favicon.png" />
-12
   <link rel="shortcut icon" href="/playlogtw-favicon.png" />
-13
   <link rel="apple-touch-icon" href="/playlogtw-favicon.png" />
-14
   <meta name="theme-color" content="#0b1120" />
-15
 
-16
   <!-- Open Graph 社群預覽 -->
-17
   <meta property="og:site_name" content="playlogtw-玩局誌" />
-18
   <meta property="og:type" content="website" />
-19
   <meta property="og:title" content="百家樂專區：規則、玩法、牌路與實戰拆解｜playlogtw-玩局誌" />
-20
   <meta property="og:description" content="整理百家樂規則、算點補牌表、牌桌玩法步驟、五種牌路圖解、下注控管與莊家優勢解析。" />
-21
   <meta property="og:url" content="https://playlogtw.com/game/baccarat/" />
-22
   <meta property="og:image" content="https://playlogtw.com/playlogtw-favicon.png" />
-23
 
-24
   <style>
-25
     :root {
-26
       --bg: #0b1120;
-27
       --surface: #162033;
-28
       --surface-2: #1e293b;
-29
       --text: #f8fafc;
-30
       --muted: #94a3b8;
-31
       --gold: #f59e0b;
-32
       --accent: #38bdf8;
-33
       --border: #334155;
-34
     }
-35
     * { box-sizing: border-box; }
-36
     body {
-37
       margin: 0;
-38
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
-39
       background: var(--bg);
-40
       color: var(--text);
-41
       line-height: 1.8;
-42
     }
-43
     a { color: var(--accent); text-decoration: none; }
-44
     a:hover { text-decoration: underline; }
-45
     header {
-46
       border-bottom: 1px solid var(--border);
-47
       background: rgba(11, 17, 32, 0.94);
-48
       backdrop-filter: blur(8px);
-49
       position: sticky;
-50
       top: 0;
-51
       z-index: 20;
-52
     }
-53
     .nav-wrap {
-54
       max-width: 920px;
-55
       margin: 0 auto;
-56
       padding: 10px 20px;
-57
       display: flex;
-58
       align-items: center;
-59
       justify-content: space-between;
-60
       gap: 16px;
-61
       flex-wrap: wrap;
-62
     }
-63
     .brand {
-64
       display: inline-flex;
-65
       align-items: center;
-66
       gap: 10px;
-67
     }
-68
     .brand-logo {
-69
       height: 40px;
-70
       width: auto;
-71
       max-width: 160px;
-72
       object-fit: contain;
-73
       border-radius: 6px;
-74
       display: block;
-75
     }
-76
     .menu-toggle {
-77
       display: none;
-78
       background: var(--surface);
-79
       color: var(--text);
-80
       border: 1px solid var(--border);
-81
       border-radius: 8px;
-82
       padding: 6px 12px;
-83
       font-size: 1.1rem;
-84
       cursor: pointer;
-85
     }
-86
     .site-nav {
-87
       display: flex;
-88
       align-items: center;
-89
       gap: 18px;
-90
       flex-wrap: wrap;
-91
       font-size: 0.95rem;
-92
     }
-93
     .site-nav a { color: var(--muted); text-decoration: none; }
-94
     .site-nav a:hover { color: var(--text); }
-95
     .nav-item { position: relative; }
-96
     .nav-row { display: inline-flex; align-items: center; gap: 4px; }
-97
     .sub-toggle {
-98
       background: transparent;
-99
       border: none;
-100
       color: var(--muted);
-101
       cursor: pointer;
-102
       padding: 2px 4px;
-103
       font-size: 0.85rem;
-104
       line-height: 1;
-105
     }
-106
     .sub-toggle:hover,
-107
     .nav-item:hover .sub-toggle { color: var(--text); }
-108
     .sub-menu {
-109
       list-style: none;
-110
       margin: 0;
-111
       padding: 8px 0;
-112
       position: absolute;
-113
       top: 100%;
-114
       left: 0;
-115
       min-width: 170px;
-116
       background: var(--surface);
-117
       border: 1px solid var(--border);
-118
       border-radius: 10px;
-119
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-120
       display: none;
-121
       z-index: 30;
-122
     }
-123
     .sub-menu li a {
-124
       display: block;
-125
       padding: 8px 14px;
-126
       color: var(--text);
-127
       font-size: 0.92rem;
-128
     }
-129
     .sub-menu li a:hover {
-130
       background: var(--surface-2);
-131
       color: var(--gold);
-132
       text-decoration: none;
-133
     }
-134
     @media (hover: hover) and (min-width: 769px) {
-135
       .nav-item:hover .sub-menu { display: block; }
-136
     }
-137
     @media (max-width: 768px) {
-138
       .menu-toggle { display: inline-block; }
-139
       #site-nav { width: 100%; }
-140
       .site-nav {
-141
         display: none;
-142
         width: 100%;
-143
         flex-direction: column;
-144
         align-items: stretch;
-145
         gap: 6px;
-146
         padding-top: 10px;
-147
         border-top: 1px solid var(--border);
-148
       }
-149
       .site-nav.open { display: flex; }
-150
       .site-nav > a,
-151
       .nav-row { padding: 8px 4px; }
-152
       .nav-row { justify-content: space-between; }
-153
       .sub-menu {
-154
         position: static;
-155
         box-shadow: none;
-156
         border: none;
-157
         border-left: 2px solid var(--border);
-158
         border-radius: 0;
-159
         margin-left: 10px;
-160
         padding: 4px 0 4px 10px;
-161
         background: transparent;
-162
       }
-163
       .nav-item.open .sub-menu { display: block; }
-164
     }
-165
 
-166
     main {
-167
       max-width: 920px;
-168
       margin: 0 auto;
-169
       padding: 32px 20px 72px;
-170
     }
-171
     .breadcrumb {
-172
       font-size: 0.88rem;
-173
       color: var(--muted);
-174
       margin-bottom: 18px;
-175
     }
-176
     .tag {
-177
       display: inline-block;
-178
       background: rgba(245, 158, 11, 0.15);
-179
       color: var(--gold);
-180
       border: 1px solid rgba(245, 158, 11, 0.38);
-181
       padding: 3px 10px;
-182
       border-radius: 999px;
-183
       font-size: 0.82rem;
-184
       font-weight: 700;
-185
       margin-bottom: 12px;
-186
     }
-187
     h1 {
-188
       margin: 0 0 14px;
-189
       font-size: clamp(1.65rem, 3.2vw, 2.25rem);
-190
       line-height: 1.28;
-191
     }
-192
     .lead {
-193
       color: var(--muted);
-194
       font-size: 1.02rem;
-195
       margin: 0 0 32px;
-196
       padding-bottom: 20px;
-197
       border-bottom: 1px solid var(--border);
-198
     }
-199
     h2 {
-200
       font-size: 1.28rem;
-201
       margin: 32px 0 14px;
-202
       color: var(--text);
-203
     }
-204
     .grid {
-205
       display: grid;
-206
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-207
       gap: 16px;
-208
       margin-top: 14px;
-209
     }
-210
     .card {
-211
       background: var(--surface);
-212
       border: 1px solid var(--border);
-213
       border-radius: 12px;
-214
       padding: 18px 20px;
-215
       display: flex;
-216
       flex-direction: column;
-217
       justify-content: space-between;
-218
       gap: 12px;
-219
     }
-220
     .card-badge {
-221
       display: inline-block;
-222
       font-size: 0.78rem;
-223
       color: var(--gold);
-224
       font-weight: 700;
-225
       margin-bottom: 4px;
-226
     }
-227
     .card h3 {
-228
       margin: 0 0 8px;
-229
       font-size: 1.08rem;
-230
       line-height: 1.4;
-231
     }
-232
     .card p {
-233
       margin: 0;
-234
       color: var(--muted);
-235
       font-size: 0.92rem;
-236
     }
-237
     .card.upcoming {
-238
       opacity: 0.75;
-239
       border-style: dashed;
-240
     }
-241
     .card.upcoming .card-badge {
-242
       color: var(--muted);
-243
     }
-244
     .next-box {
-245
       margin-top: 38px;
-246
       background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.08));
-247
       border: 1px solid var(--border);
-248
       border-radius: 14px;
-249
       padding: 20px;
-250
     }
-251
     footer {
-252
       border-top: 1px solid var(--border);
-253
       padding: 24px 20px;
-254
       text-align: center;
-255
       color: var(--muted);
-256
       font-size: 0.88rem;
-257
     }
-258
   </style>
-259
 </head>
-260
 <body>
-261
   <header>
-262
     <div class="nav-wrap">
-263
       <a class="brand" href="/">
-264
         <img class="brand-logo" src="/playlogtw-logo.png" alt="playlogtw-玩局誌 Logo" />
-265
       </a>
-266
 
-267
       <button class="menu-toggle" type="button" aria-label="切換選單" aria-expanded="false">☰</button>
-268
 
-269
       <!-- 共用選單容器（由根目錄 /nav.js 自動填入） -->
-270
       <div id="site-nav"></div>
-271
     </div>
-272
   </header>
-273
 
-274
   <main>
-275
     <div class="breadcrumb">
-276
       <a href="/">首頁</a> / <a href="/game/">遊戲總覽</a> / 百家樂專區
-277
     </div>
-278
 
-279
     <span class="tag">百家樂專區 · 規則與路單</span>
-280
     <h1>百家樂專區</h1>
-281
     <p class="lead">
-282
       這裡整理了百家樂的規則、算點、玩法流程、牌路圖解和賠率。建議先把每一局怎麼結算、路單記錄的是什麼弄清楚，再看下注控管。還沒寫完的主題列在頁面下方，完成後會補上。
-283
     </p>
-284
 
-285
     <h2>已上架百家樂教學（4 篇）</h2>
-286
     <div class="grid">
-287
       <article class="card">
-288
         <div>
-289
           <span class="card-badge">百家樂 · 新手入門</span>
-290
           <h3><a href="/game/baccarat/baccarat-rules">從零開始學百家樂規則：算點方式、補牌表、賠率與莊家優勢</a></h3>
-291
           <p>從下注選項、個位數算點、閒莊補牌表到 300 局實戰紀錄，比較莊、閒、和三個注區的賠率與莊家優勢。</p>
-292
         </div>
-293
         <div><a href="/game/baccarat/baccarat-rules">閱讀文章 →</a></div>
-294
       </article>
-295
       <article class="card">
-296
         <div>
-297
           <span class="card-badge">百家樂 · 圖解流程</span>
-298
           <h3><a href="/game/baccarat/baccarat-how-to-play">百家樂怎麼玩？圖解牌桌、投注區與每局 4 步驟</a></h3>
-299
           <p>帶你看懂牌桌區域、三個投注區和佣金盒，再跟著下注、發牌、補牌、結算四個步驟走完一局。</p>
-300
         </div>
-301
         <div><a href="/game/baccarat/baccarat-how-to-play">閱讀文章 →</a></div>
-302
       </article>
-303
       <article class="card">
-304
         <div>
-305
           <span class="card-badge">百家樂 · 路單圖解</span>
-306
           <h3><a href="/game/baccarat/baccarat-road-map-guide">百家樂牌路怎麼看？五種路單圖解＋12 局實例教學</a></h3>
-307
           <p>用同一組 12 局資料手把手畫出珠盤路、大路、大眼仔、小路與曱甴路，看懂問路與下三路紅藍規則，也說明牌路為什麼不能預測下一局。</p>
-308
         </div>
-309
         <div><a href="/game/baccarat/baccarat-road-map-guide">閱讀文章 →</a></div>
-310
       </article>
-311
       <article class="card">
-312
         <div>
-313
           <span class="card-badge">百家樂 · 策略與風控</span>
-314
           <h3><a href="/game/baccarat/baccarat-tips">百家樂技巧有用嗎？牌路怎麼看、下注怎麼控，一次講清楚</a></h3>
-315
           <p>押莊和押閒的損耗差多少、牌路為什麼預測不了下一局、馬丁格爾倍投連輸時要拿出多少錢，以及預算和停損怎麼設。</p>
-316
         </div>
-317
         <div><a href="/game/baccarat/baccarat-tips">閱讀文章 →</a></div>
-318
       </article>
-319
     </div>
-320
 
-321
     <h2>規劃中的百家樂內容</h2>
-322
     <div class="grid">
-323
       <article class="card upcoming">
-324
         <div>
-325
           <span class="card-badge">籌備中 · 百家樂</span>
-326
           <h3>抽水、和局陷阱與常見玩法差異</h3>
-327
           <p>針對抽水計算、和局賠率與衍生規則做更細的數字對照。</p>
-328
         </div>
-329
       </article>
-330
     </div>
-331
 
-332
     <div class="next-box">
-333
       <strong style="color: var(--gold); display: block; margin-bottom: 6px;">搭配資金與風險控管一起看</strong>
-334
       <p style="margin: 0;">
-335
         規則和牌路弄懂之後，下注時真正吃重的是注碼大小，以及你扛得住多大的波動。可以接著看：<a href="/risk-management/ev-and-bankroll">期望值是正的，為什麼我還是輸光了？波動率、注碼比例與破產風險拆解</a>
-336
       </p>
-337
     </div>
-338
   </main>
-339
 
-340
   <footer>
-341
     playlogtw-玩局誌 · 實戰玩家數據與攻略筆記站 · <a href="/">回首頁</a> · <a href="/sitemap.xml">Sitemap</a>
-342
   </footer>
-343
 
-344
   <!-- 呼叫根目錄的共用選單腳本 -->
-345
   <script src="/nav.js" defer></script>
-346
 </body>
-347
 </html>
