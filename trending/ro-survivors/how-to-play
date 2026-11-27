@@ -335,8 +335,12 @@
     <span class="tag">RO Survivors · 完整玩法總整理</span>
     <h1>RO 倖存者怎麼玩？官方網址、職業推薦、二轉與交易規則一次看</h1>
     <p class="lead">
-      《RO 倖存者》（RO Survivors）是 Reven4nt 做的免費網頁遊戲，把《RO 仙境傳說》的職業、魔物和場景，塞進《吸血鬼倖存者》那種自動攻擊、升級選技能的玩法裡。用電腦或手機瀏覽器就能玩，不用下載。這篇整理原作者網站、基本玩法、六個一轉職業、12 種二轉、新手練功、裝備養成與最新交易規則（資料查核至 2026 年 11 月 23 日，仍在 Beta 測試階段，實際數值與規則以遊戲內公告為準）。
+      《RO 倖存者》（RO Survivors）是 Reven4nt 做的免費網頁遊戲，把《RO 仙境傳說》的職業、魔物和場景，塞進《吸血鬼倖存者》那種自動攻擊、升級選技能的玩法裡。用電腦或手機瀏覽器就能玩，不用下載。這篇整理原作者網站、基本玩法、六個一轉職業、12 種二轉、新手練功、裝備養成與最新交易規則（新聞與版本資訊查核至 2026 年 11 月 27 日，遊戲仍在 Beta 測試。職業與關卡的數值表是 Beta 0.7.1 的資料，尚未反映 11 月 23 日之後的改版，實際以遊戲內公告為準）。
     </p>
+
+    <div class="callout">
+      <strong>11 月 23～24 日改版重點：</strong>依 NOWnews 報導，11 月 23 日的更新調整了多項技能傷害，法師三矢被玩家指出降了約 44%（玩家回報的數字，不是官方數據）。11 月 24 日的 Beta 0.8.2 取消了 Boss 單次技能最多扣 5% 生命的限制，改成依技能設定減傷；神祇改在 20 級手動選擇；一般怪物卡片效果恢復為 Beta 0.8 之前的數值。詳情見 <a href="https://www.nownews.com/news/6895039" target="_blank" rel="noopener noreferrer">改版報導</a> 與 <a href="https://www.nownews.com/news/6895094" target="_blank" rel="noopener noreferrer">0.8.2 攻略報導</a>。下方職業與關卡的數值表還沒有反映這些改動。
+    </div>
 
     <nav class="toc" aria-label="文章目錄">
       <div class="toc-title">快速跳轉章節</div>
@@ -394,7 +398,7 @@
       一大原因是有繁體中文。2026 年 11 月 9 日 Beta 0.5.2 加入繁中，後來社群玩家 Syuan 幫忙校對職業和技能名稱，悟靈士、神槍手、吟遊詩人這些，都用台灣老玩家習慣的譯法。
     </p>
     <p>
-      再加上普隆德拉廣場、波利、MVP 和經典 BGM，曾經玩過 RO 的人一進去就有熟悉感。也有新聞報導它在 Threads 上快速擴散，伺服器還因為人太多出現排隊。
+      再加上普隆德拉廣場、波利、MVP 和經典 BGM，曾經玩過 RO 的人一進去就有熟悉感。依 <a href="https://tw.news.yahoo.com/%E3%80%8Aro%E5%80%96%E5%AD%98%E8%80%85%E3%80%8B%E9%81%8A%E6%88%B2%E5%A4%B1%E6%8E%A7%EF%BC%9F%E5%8F%B0%E7%81%A3%E7%88%86%E7%B4%85%E3%80%8C%E5%A4%96%E6%8E%9B%E5%92%8C%E7%8F%BE%E9%87%91%E8%B2%B7%E8%B3%A3%E3%80%8D%E4%BD%9C%E8%80%85%E6%80%A5%E6%94%B9%E8%A6%8F%E5%89%87-064302485.html" target="_blank" rel="noopener noreferrer">Yahoo 新聞</a>報導，11 月 9 日推出繁中介面後，遊戲在台灣社群快速擴散，夜間 2 萬人規模的伺服器上線瞬間就塞滿，需要排隊入場。
     </p>
 
     <h2 id="unofficial">四、非官方遊戲與網址避雷</h2>
@@ -519,7 +523,7 @@
 
     <h3>建立帳號和角色</h3>
     <p>
-      目前登入需要建帳號，免費，也不用填電子郵件。訪客模式的說法在不同頁面不一致，實際以登入畫面的說明為準。
+      目前登入需要建帳號，免費，也不用填電子郵件。早期可以用訪客模式直接進遊戲，但依 <a href="https://www.nownews.com/news/6895039" target="_blank" rel="noopener noreferrer">NOWnews 11 月 24 日的報導</a>，目前已不開放訪客遊玩，需要先建立帳號。
     </p>
     <p>帳號有幾個細節：</p>
     <ul>
@@ -756,6 +760,9 @@
     <p>
       二轉是這款遊戲養成的重頭戲。一轉練到一定程度，就能在普隆德拉城走劇情轉職。每個一轉職業有兩條路，選不同，技能、天賦和打法都會跟著變。
     </p>
+    <p>
+      不過依 <a href="https://www.nownews.com/news/6895039" target="_blank" rel="noopener noreferrer">NOWnews 的報導</a>，完整的二轉技能目前還沒有全部開放，不少玩家因此對改版有意見。下面的二轉資料以 Beta 資料為準，實際能玩到什麼，看遊戲內的狀況。
+    </p>
 
     <h3>二轉條件</h3>
     <p>目前資料列出的條件有這些：</p>
@@ -909,17 +916,8 @@
 
     <h3>新手該選哪一個</h3>
     <p>
-      只看初始 HP，十字軍、鐵匠、鍊金術師和騎士都比較耐打。但 HP 不是全部，技能範圍、冷卻、攻擊方式和天賦配置，都會影響實戰表現。簡單對照一下：
+      只看初始 HP，十字軍、鐵匠、鍊金術師和騎士都比較耐打。但 HP 不是全部，技能範圍、冷卻、攻擊方式和天賦配置，都會影響實戰表現。
     </p>
-    <ul>
-      <li><strong>想耐打</strong>：十字軍、騎士、鐵匠。</li>
-      <li><strong>大範圍魔法</strong>：巫師。</li>
-      <li><strong>遠程攻擊</strong>：獵人。</li>
-      <li><strong>治療支援</strong>：祭司。</li>
-      <li><strong>近戰連擊</strong>：武僧。</li>
-      <li><strong>毒素與爆發</strong>：刺客。</li>
-      <li><strong>想玩特別的</strong>：賢者、鍊金術師、流氓。</li>
-    </ul>
     <p>
       還沒想好的話，先去看官方天賦樹：<a href="https://ro-survivors.com/talents.html" target="_blank" rel="noopener noreferrer">https://ro-survivors.com/talents.html</a>。二轉後會保留一轉已拿的技能和天賦，再加上二轉的新能力。天賦樹有不同流派，先想好要玩哪一種，再決定點哪個分支。
     </p>
@@ -1197,7 +1195,7 @@
 
     <h2 id="changelog">十二、版本更新紀錄與常見 FAQ</h2>
     <p>
-      遊戲還在測試，職業、技能、交易和伺服器規則都可能變。截至 2026 年 11 月 23 日，最新的版本紀錄是 Beta 0.7.6（11 月 19 日）。本文的關卡與職業資料表是依 Beta 0.7.1 整理的，之後的調整可能還沒反映進來。
+      遊戲還在測試，職業、技能、交易和伺服器規則都可能變。依 NOWnews 報導，11 月 23 日有一次大幅度的職業平衡調整，11 月 24 日推出 Beta 0.8.2。本文的關卡與職業資料表是依 Beta 0.7.1 整理的，這兩次改版的內容還沒有反映進來。
     </p>
 
     <div class="table-wrap">
@@ -1210,6 +1208,16 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td><strong>Beta 0.8.2</strong></td>
+            <td>11/24</td>
+            <td>取消 Boss 單次技能 5% 生命上限，改為依技能設減傷；神祇改為 20 級手動選擇；一般怪物卡片效果恢復為 0.8 之前數值</td>
+          </tr>
+          <tr>
+            <td><strong>11/23 更新</strong></td>
+            <td>11/23</td>
+            <td>大幅調整職業平衡與技能傷害（報導未提供版本號）</td>
+          </tr>
           <tr>
             <td><strong>Beta 0.7.6</strong></td>
             <td>11/19</td>
@@ -1270,8 +1278,8 @@
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Q3：需要下載嗎？</div>
-      <p class="faq-a">不用，電腦或手機瀏覽器就能玩，也可以把網站加到手機主畫面。</p>
+      <div class="faq-q">Q3：需要下載嗎？有手機版嗎？</div>
+      <p class="faq-a">不用下載。電腦或手機瀏覽器就能玩，沒有獨立的 App；Android 和 iPhone 都可以把網站加到主畫面，開起來像 App 一樣。</p>
     </div>
 
     <div class="faq-item">
@@ -1295,39 +1303,31 @@
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Q8：可以跟朋友交易嗎？</div>
-      <p class="faq-a">可以，但有帳號建立時間、好友關係、每日次數和物品類型的限制。傳說裝備和卡片另有隊伍與取得時間的條件，還有 10% 的公平交易限制。</p>
+      <div class="faq-q">Q8：可以跟朋友交易嗎？可以用現金買裝備嗎？</div>
+      <p class="faq-a">可以交易，但有帳號建立時間、好友關係、每日次數和物品類型的限制。傳說裝備和卡片另有隊伍與取得時間的條件，還有 10% 的公平交易限制。用現金買賣裝備不行，違規可能被永久刪帳號，買賣雙方都會受到處分。</p>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Q9：可以用現金買裝備嗎？</div>
-      <p class="faq-a">不可以。違規可能被永久刪帳號，買賣雙方都會受到處分。</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Q10：有手機版嗎？</div>
-      <p class="faq-a">用 Android 或 iPhone 的瀏覽器就能玩，沒有獨立的 App。可以加到主畫面，開起來像 App 一樣。</p>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Q11：可以建立幾個角色？</div>
+      <div class="faq-q">Q9：可以建立幾個角色？</div>
       <p class="faq-a">一個帳號最多 15 個，不同角色可以試不同的職業和天賦方向。</p>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Q12：現在是哪個版本？</div>
-      <p class="faq-a">截至 2026 年 11 月 23 日，最新的紀錄是 Beta 0.7.6（11 月 19 日）。遊戲還在更新，實際版本請看登入後的公告。</p>
+      <div class="faq-q">Q10：現在是哪個版本？</div>
+      <p class="faq-a">依 NOWnews 報導，11 月 24 日推出了 Beta 0.8.2。遊戲還在更新，實際版本請看登入後的公告。</p>
     </div>
 
     <div class="meta-note">
-      <div><strong>本文最後查核日期：</strong>2026 年 11 月 23 日</div>
+      <div><strong>本文最後查核日期：</strong>2026 年 11 月 27 日（新聞與版本資訊；職業與關卡數值表為 Beta 0.7.1 資料）</div>
       <div><strong>主要資料來源：</strong></div>
       <ul>
         <li><a href="https://ro-survivors.com/" target="_blank" rel="noopener noreferrer">RO Survivors 原作者遊戲網站</a></li>
         <li>RO Survivors 法律聲明</li>
         <li><a href="https://ro-survivors.com/talents.html" target="_blank" rel="noopener noreferrer">RO Survivors 天賦樹總覽</a></li>
-        <li>NOWnews 相關新聞報導</li>
-        <li>Yahoo 新聞：RO 倖存者相關報導</li>
+        <li><a href="https://www.nownews.com/news/6891655" target="_blank" rel="noopener noreferrer">NOWnews：《RO倖存者》免費網頁遊戲爆紅！手機電腦都能玩、經典職業超懷舊</a></li>
+        <li><a href="https://www.nownews.com/news/6895039" target="_blank" rel="noopener noreferrer">NOWnews：《RO倖存者》改版惹議！法師技能傷害遭砍44% 玩家哀號爽感沒了</a></li>
+        <li><a href="https://www.nownews.com/news/6895094" target="_blank" rel="noopener noreferrer">NOWnews：《RO倖存者》新版掛機攻略！劍士盾牌流、法師冰系流配點技巧一覽</a></li>
+        <li><a href="https://tw.news.yahoo.com/%E3%80%8Aro%E5%80%96%E5%AD%98%E8%80%85%E3%80%8B%E9%81%8A%E6%88%B2%E5%A4%B1%E6%8E%A7%EF%BC%9F%E5%8F%B0%E7%81%A3%E7%88%86%E7%B4%85%E3%80%8C%E5%A4%96%E6%8E%9B%E5%92%8C%E7%8F%BE%E9%87%91%E8%B2%B7%E8%B3%A3%E3%80%8D%E4%BD%9C%E8%80%85%E6%80%A5%E6%94%B9%E8%A6%8F%E5%89%87-064302485.html" target="_blank" rel="noopener noreferrer">Yahoo 新聞：《RO倖存者》遊戲失控？台灣爆紅「外掛和現金買賣」作者急改規則</a></li>
       </ul>
       <p style="margin: 10px 0 0;">
         本文是遊戲資訊整理與新手攻略，不是 Gravity 官方公告。遊戲還在 Beta 測試，職業數值、關卡條件、交易規則和更新內容都可能變，請以遊戲內最新公告為準。
